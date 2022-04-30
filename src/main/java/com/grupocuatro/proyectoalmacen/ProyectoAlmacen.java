@@ -5,7 +5,6 @@
 
 package com.grupocuatro.proyectoalmacen;
 import com.grupocuatro.proyectoalmacen.vista.Login;
-
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
