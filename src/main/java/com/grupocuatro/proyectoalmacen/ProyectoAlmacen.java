@@ -4,12 +4,14 @@
  */
 
 package com.grupocuatro.proyectoalmacen;
-import com.grupocuatro.proyectoalmacen.vista.Login;
+import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        Login uwu = new Login();
-        uwu.setVisible(true);
+        System.out.println("Testeo de clases y metodos");
+        //Para testear
+        Ingresar ing = new Ingresar();
+        System.out.println(ing.getFechaHoy());
+        ing.ventana();
     }
 }

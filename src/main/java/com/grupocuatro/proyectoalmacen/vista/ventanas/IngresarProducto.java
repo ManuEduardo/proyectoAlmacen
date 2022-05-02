@@ -26,21 +26,146 @@ public class IngresarProducto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        tituloLabel = new javax.swing.JLabel();
+        productosCombo = new javax.swing.JComboBox<>();
+        cantidadSpinner = new javax.swing.JSpinner();
+        ingresarButton = new javax.swing.JButton();
+        fechaCaducidadLabel = new javax.swing.JLabel();
+        seleccionarProductoLabel = new javax.swing.JLabel();
+        seleccionarCantidadLabel = new javax.swing.JLabel();
+        anioSpinner = new javax.swing.JSpinner();
+        diaSpinner = new javax.swing.JSpinner();
+        mesSpinner = new javax.swing.JSpinner();
+        slashLabel1 = new javax.swing.JLabel();
+        slashLabel2 = new javax.swing.JLabel();
+        anioLabel = new javax.swing.JLabel();
+        diaLabel = new javax.swing.JLabel();
+        mesLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(450, 330));
+        setPreferredSize(new java.awt.Dimension(450, 330));
+        setResizable(false);
+        setSize(new java.awt.Dimension(450, 330));
+
+        jPanel1.setBackground(new java.awt.Color(242, 174, 48));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tituloLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        tituloLabel.setForeground(new java.awt.Color(217, 11, 49));
+        tituloLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloLabel.setText("INGRESAR PRODUCTO");
+        tituloLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+
+        productosCombo.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        productosCombo.setMaximumRowCount(100);
+        productosCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        productosCombo.setBorder(null);
+        productosCombo.setFocusable(false);
+        productosCombo.setPreferredSize(new java.awt.Dimension(290, 30));
+        productosCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productosComboActionPerformed(evt);
+            }
+        });
+        jPanel1.add(productosCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 150, 30));
+
+        cantidadSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        cantidadSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 200, 1));
+        cantidadSpinner.setBorder(null);
+        cantidadSpinner.setFocusable(false);
+        cantidadSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
+        cantidadSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
+        cantidadSpinner.setRequestFocusEnabled(false);
+        jPanel1.add(cantidadSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 60, 30));
+
+        ingresarButton.setBackground(new java.awt.Color(158, 191, 36));
+        ingresarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        ingresarButton.setForeground(new java.awt.Color(255, 255, 255));
+        ingresarButton.setText("INGRESAR");
+        ingresarButton.setBorder(null);
+        ingresarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ingresarButton.setFocusable(false);
+        jPanel1.add(ingresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 160, 30));
+
+        fechaCaducidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        fechaCaducidadLabel.setText("Fecha de Caducidad");
+        jPanel1.add(fechaCaducidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        seleccionarProductoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        seleccionarProductoLabel.setText("SELECCIONE EL PRODUCTO");
+        jPanel1.add(seleccionarProductoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        seleccionarCantidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        seleccionarCantidadLabel.setText("SELECCIONE LA CANTIDAD");
+        jPanel1.add(seleccionarCantidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+
+        anioSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        anioSpinner.setModel(new javax.swing.SpinnerNumberModel(2022, 2022, null, 1));
+        anioSpinner.setBorder(null);
+        anioSpinner.setFocusable(false);
+        anioSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
+        anioSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
+        anioSpinner.setRequestFocusEnabled(false);
+        jPanel1.add(anioSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 80, 30));
+
+        diaSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        diaSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 30, 1));
+        diaSpinner.setBorder(null);
+        diaSpinner.setFocusable(false);
+        diaSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
+        diaSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
+        diaSpinner.setRequestFocusEnabled(false);
+        jPanel1.add(diaSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 49, 30));
+
+        mesSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        mesSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+        mesSpinner.setBorder(null);
+        mesSpinner.setFocusable(false);
+        mesSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
+        mesSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
+        mesSpinner.setRequestFocusEnabled(false);
+        jPanel1.add(mesSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 49, 30));
+
+        slashLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        slashLabel1.setText("/");
+        jPanel1.add(slashLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 192, -1, -1));
+
+        slashLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        slashLabel2.setText("/");
+        jPanel1.add(slashLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 192, -1, -1));
+
+        anioLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        anioLabel.setText("AÑO");
+        jPanel1.add(anioLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 30, -1));
+
+        diaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        diaLabel.setText("DIA");
+        jPanel1.add(diaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 25, -1));
+
+        mesLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        mesLabel.setText("MES");
+        jPanel1.add(mesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 25, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void productosComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_productosComboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +203,21 @@ public class IngresarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel anioLabel;
+    private javax.swing.JSpinner anioSpinner;
+    private javax.swing.JSpinner cantidadSpinner;
+    private javax.swing.JLabel diaLabel;
+    private javax.swing.JSpinner diaSpinner;
+    private javax.swing.JLabel fechaCaducidadLabel;
+    private javax.swing.JButton ingresarButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mesLabel;
+    private javax.swing.JSpinner mesSpinner;
+    private javax.swing.JComboBox<String> productosCombo;
+    private javax.swing.JLabel seleccionarCantidadLabel;
+    private javax.swing.JLabel seleccionarProductoLabel;
+    private javax.swing.JLabel slashLabel1;
+    private javax.swing.JLabel slashLabel2;
+    private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }
