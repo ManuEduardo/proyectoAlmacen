@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author manue
  */
-public class Login extends javax.swing.JFrame {
+public class VentanaLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public VentanaLogin() {
         initComponents();
     }
 
@@ -197,7 +197,6 @@ public class Login extends javax.swing.JFrame {
         contrasenaField.setText("contrasena");
         contrasenaField.setForeground(Color.gray);
         }
-        
     }//GEN-LAST:event_usuarioFieldMousePressed
 
     private void contrasenaFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaFieldMousePressed
@@ -213,7 +212,7 @@ public class Login extends javax.swing.JFrame {
 
     private void entrarBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBotonMouseClicked
         //Para probar la entrada de datos
-        javax.swing.JOptionPane.showMessageDialog(this,"Ingreso de datos: \n user: "+usuarioField.getText()+"\ncontraseña: "+String.valueOf(contrasenaField.getPassword()));
+        
     }//GEN-LAST:event_entrarBotonMouseClicked
 
     /**
@@ -233,35 +232,36 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new VentanaLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField contrasenaField;
+    public javax.swing.JPasswordField contrasenaField;
     private javax.swing.JLabel contrasenaLabel;
     private javax.swing.JSeparator contrasenaSeparator;
-    private javax.swing.JButton entrarBoton;
+    public javax.swing.JButton entrarBoton;
     private javax.swing.JPanel fondoFormLogin;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel loginLabel;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel userLabel;
-    private javax.swing.JTextField usuarioField;
+    public javax.swing.JTextField usuarioField;
     private javax.swing.JSeparator usuarioSeparator;
     // End of variables declaration//GEN-END:variables
 }

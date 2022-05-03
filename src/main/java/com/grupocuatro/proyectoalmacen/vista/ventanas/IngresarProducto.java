@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.grupocuatro.proyectoalmacen.vista.ventanas;
+import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
 
 /**
  *
@@ -10,6 +11,7 @@ package com.grupocuatro.proyectoalmacen.vista.ventanas;
  */
 public class IngresarProducto extends javax.swing.JFrame {
 
+    //SE CREA OBJETO DE LA CLASE INGRESAR PARA LLAMAR A LOS METODOS
     /**
      * Creates new form IngresarProducto
      */
@@ -45,7 +47,6 @@ public class IngresarProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(450, 330));
-        setPreferredSize(new java.awt.Dimension(450, 330));
         setResizable(false);
         setSize(new java.awt.Dimension(450, 330));
 
@@ -73,7 +74,7 @@ public class IngresarProducto extends javax.swing.JFrame {
         jPanel1.add(productosCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 150, 30));
 
         cantidadSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        cantidadSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 200, 1));
+        cantidadSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10000, 1));
         cantidadSpinner.setBorder(null);
         cantidadSpinner.setFocusable(false);
         cantidadSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
@@ -88,6 +89,16 @@ public class IngresarProducto extends javax.swing.JFrame {
         ingresarButton.setBorder(null);
         ingresarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ingresarButton.setFocusable(false);
+        ingresarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ingresarButtonMouseClicked(evt);
+            }
+        });
+        ingresarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresarButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(ingresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 160, 30));
 
         fechaCaducidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -162,10 +173,18 @@ public class IngresarProducto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void productosComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_productosComboActionPerformed
+
+    private void ingresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarButtonActionPerformed
+
+    }//GEN-LAST:event_ingresarButtonActionPerformed
+
+    private void ingresarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarButtonMouseClicked
+
+    }//GEN-LAST:event_ingresarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -204,16 +223,16 @@ public class IngresarProducto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel anioLabel;
-    private javax.swing.JSpinner anioSpinner;
-    private javax.swing.JSpinner cantidadSpinner;
+    public javax.swing.JSpinner anioSpinner;
+    public javax.swing.JSpinner cantidadSpinner;
     private javax.swing.JLabel diaLabel;
-    private javax.swing.JSpinner diaSpinner;
+    public javax.swing.JSpinner diaSpinner;
     private javax.swing.JLabel fechaCaducidadLabel;
-    private javax.swing.JButton ingresarButton;
+    public javax.swing.JButton ingresarButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mesLabel;
-    private javax.swing.JSpinner mesSpinner;
-    private javax.swing.JComboBox<String> productosCombo;
+    public javax.swing.JSpinner mesSpinner;
+    public javax.swing.JComboBox<String> productosCombo;
     private javax.swing.JLabel seleccionarCantidadLabel;
     private javax.swing.JLabel seleccionarProductoLabel;
     private javax.swing.JLabel slashLabel1;

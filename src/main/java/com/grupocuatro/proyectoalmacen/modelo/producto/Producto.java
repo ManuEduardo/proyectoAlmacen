@@ -9,6 +9,7 @@ package com.grupocuatro.proyectoalmacen.modelo.producto;
  * @author manue
  */
 public class Producto {
+    //SE CREA LA CLASE PRODUCTO Y SE INSTANCIAN GETS AND SETS
     private String nombre;
     private String descripcion;
     private int idCodigo;

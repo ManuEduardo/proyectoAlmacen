@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.grupocuatro.proyectoalmacen.modelo.funcionalidades;
-import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarProducto;
 import  java.text.SimpleDateFormat;
 import java.util.Date;
 /**
@@ -11,12 +10,15 @@ import java.util.Date;
  * @author manue
  */
 public class Ingresar {
+    //SE CREAN OBJETOS PARA EL USO DE FECHAS
     protected Date fecha = new Date();
     protected SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/YYYY");
     protected String fechaHoy = fechaFormato.format(fecha);
-    
+ 
+    //ATRIBUTOS BASE DE LA CLASE INGRESAS MAS SETS Y GETS
     protected String nombreIngresado;
     protected int cantidad;
+    protected String fechaCaducidad;
 
     public Date getFecha() {
         return fecha;
@@ -45,13 +47,16 @@ public class Ingresar {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    //SE OBTENDRIAN LOS DATOS INGRESADOS DE LA VENTANA INGRESAR 
-    public void ventana(){
-        IngresarProducto ventanaIngresarProducto = new IngresarProducto();
-        ventanaIngresarProducto.setVisible(true);
+
+    public String getFechaCaducidad() {
+        return fechaCaducidad;
     }
-    public void datodButton(){
-        
+
+    public void setFechaCaducidad(int dia,int mes,int anio) {
+        this.fechaCaducidad = dia + "/" + mes + "/" + anio;
+    }
+    public void establecerDatos(String nombre,int cantidad){
+        setNombreIngresado(nombre);
+        setCantidad(cantidad);
     }
 }

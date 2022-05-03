@@ -4,14 +4,25 @@
  */
 
 package com.grupocuatro.proyectoalmacen;
+import com.grupocuatro.proyectoalmacen.controlador.ControladorLogin;
+import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
+import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
+
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarProducto;
+import com.grupocuatro.proyectoalmacen.controlador.ControladorIngresar;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
         System.out.println("Testeo de clases y metodos");
         //Para testear
-        Ingresar ing = new Ingresar();
-        System.out.println(ing.getFechaHoy());
-        ing.ventana();
+        VentanaLogin ventanaTest = new VentanaLogin();
+        Login loginTest = new Login();
+        ControladorLogin test = new ControladorLogin(loginTest,ventanaTest);
+        //test.IniciarVentanaLogin();
+        IngresarProducto ventanatest2 = new IngresarProducto();
+        Ingresar ingresarTest = new Ingresar();
+        ControladorIngresar test2 = new ControladorIngresar(ingresarTest,ventanatest2);
+        test2.iniciarVentanaIngresar();
     }
 }
