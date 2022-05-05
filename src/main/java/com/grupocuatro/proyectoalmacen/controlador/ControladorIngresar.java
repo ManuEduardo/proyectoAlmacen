@@ -7,7 +7,7 @@ package com.grupocuatro.proyectoalmacen.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
-import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarProducto;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarStock;
 
 /**
  *
@@ -15,9 +15,9 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarProducto;
  */
 public class ControladorIngresar implements ActionListener{
     private Ingresar modeloIngresar;
-    private final IngresarProducto ventanaIngresar;
+    private final IngresarStock ventanaIngresar;
 
-    public ControladorIngresar(Ingresar ingresar, IngresarProducto ventanaIngresar) {
+    public ControladorIngresar(Ingresar ingresar, IngresarStock ventanaIngresar) {
         this.modeloIngresar = ingresar;
         this.ventanaIngresar = ventanaIngresar;
         this.ventanaIngresar.ingresarButton.addActionListener(this);

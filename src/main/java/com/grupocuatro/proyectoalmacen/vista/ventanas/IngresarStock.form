@@ -60,12 +60,12 @@
               <Color blue="31" green="b" red="d9" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="INGRESAR PRODUCTO"/>
+            <Property name="text" type="java.lang.String" value="INGRESAR STOCK"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="30" width="-1" height="-1"/>
+              <AbsoluteConstraints x="120" y="30" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
