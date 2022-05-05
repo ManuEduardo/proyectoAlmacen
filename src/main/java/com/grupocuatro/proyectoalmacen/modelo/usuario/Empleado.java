@@ -10,4 +10,11 @@ package com.grupocuatro.proyectoalmacen.modelo.usuario;
  */
 public class Empleado extends Consultor{
     
+    public Empleado(String usuario, String contrasena) {
+        super(usuario, contrasena);
+        this.tipoUsuario = "empleado";
+        this.PermisoRetirarStock = true;
+        this.PermisoIngresarStock = true;
+    }
+    
 }

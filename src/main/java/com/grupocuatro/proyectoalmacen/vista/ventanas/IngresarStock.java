@@ -9,13 +9,13 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
  *
  * @author manue
  */
-public class IngresarProducto extends javax.swing.JFrame {
+public class IngresarStock extends javax.swing.JFrame {
 
     //SE CREA OBJETO DE LA CLASE INGRESAR PARA LLAMAR A LOS METODOS
     /**
      * Creates new form IngresarProducto
      */
-    public IngresarProducto() {
+    public IngresarStock() {
         initComponents();
     }
 
@@ -56,9 +56,9 @@ public class IngresarProducto extends javax.swing.JFrame {
         tituloLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(217, 11, 49));
         tituloLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tituloLabel.setText("INGRESAR PRODUCTO");
+        tituloLabel.setText("INGRESAR STOCK");
         tituloLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+        jPanel1.add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
         productosCombo.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         productosCombo.setMaximumRowCount(100);
@@ -203,20 +203,21 @@ public class IngresarProducto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IngresarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IngresarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IngresarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IngresarProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IngresarProducto().setVisible(true);
+                new IngresarStock().setVisible(true);
             }
         });
     }
