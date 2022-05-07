@@ -10,9 +10,11 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
 
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarStock;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorIngresar;
+import com.grupocuatro.proyectoalmacen.controlador.ControladorIngresarStock;
 
-import com.grupocuatro.proyectoalmacen.modelo.usuario.*;
+import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Retirar;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.RetirarStock;
+import com.grupocuatro.proyectoalmacen.controlador.ControladorRetirarStock;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
@@ -21,16 +23,17 @@ public class ProyectoAlmacen {
         VentanaLogin ventanaTest = new VentanaLogin();
         Login loginTest = new Login();
         ControladorLogin test = new ControladorLogin(loginTest,ventanaTest);
-        test.IniciarVentanaLogin();
+        //test.IniciarVentanaLogin();
+        //----------------------------------------------------------------------------------------
         IngresarStock ventanatest2 = new IngresarStock();
         Ingresar ingresarTest = new Ingresar();
-        ControladorIngresar test2 = new ControladorIngresar(ingresarTest,ventanatest2);
+        ControladorIngresarStock test2 = new ControladorIngresarStock(ingresarTest,ventanatest2);
         //test2.iniciarVentanaIngresar();
-        Administrador admin = new Administrador("Manolito","123");
-        System.out.println("----------------------");
-        System.out.println(admin.getContrasena());
-        System.out.println(admin.getPermisoRegistrarProducto());
-        System.out.println(admin.getTipoUsuario());
+        //----------------------------------------------------------------------------------------
+        RetirarStock ventanatest3 = new RetirarStock();
+        Retirar retirarTest = new Retirar ();
+        ControladorRetirarStock test3 = new ControladorRetirarStock(retirarTest,ventanatest3);
+        test3.iniciarVentanaRetirar();
         
     }
 }

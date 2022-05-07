@@ -16,7 +16,7 @@ public class Ingresar {
     protected String fechaHoy = fechaFormato.format(fecha);
  
     //ATRIBUTOS BASE DE LA CLASE INGRESAS MAS SETS Y GETS
-    protected String nombreIngresado;
+    protected String productoIngresado;
     protected int cantidad;
     protected String fechaCaducidad;
 
@@ -27,17 +27,13 @@ public class Ingresar {
     public String getFechaHoy() {
         return fechaHoy;
     }
-
-    public void setFechaHoy(String fechaHoy) {
-        this.fechaHoy = fechaHoy;
+    
+    public String getProductoIngresado() {
+        return productoIngresado;
     }
 
-    public String getNombreIngresado() {
-        return nombreIngresado;
-    }
-
-    public void setNombreIngresado(String nombreIngresado) {
-        this.nombreIngresado = nombreIngresado;
+    public void setProductoIngresado(String productoIngresado) {
+        this.productoIngresado = productoIngresado;
     }
 
     public int getCantidad() {
@@ -56,7 +52,7 @@ public class Ingresar {
         this.fechaCaducidad = dia + "/" + mes + "/" + anio;
     }
     public void establecerDatos(String nombre,int cantidad){
-        setNombreIngresado(nombre);
+        setProductoIngresado(nombre);
         setCantidad(cantidad);
     }
 }

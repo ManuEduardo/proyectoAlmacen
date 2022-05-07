@@ -13,11 +13,11 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarStock;
  *
  * @author manue
  */
-public class ControladorIngresar implements ActionListener{
+public class ControladorIngresarStock implements ActionListener{
     private Ingresar modeloIngresar;
     private final IngresarStock ventanaIngresar;
 
-    public ControladorIngresar(Ingresar ingresar, IngresarStock ventanaIngresar) {
+    public ControladorIngresarStock(Ingresar ingresar, IngresarStock ventanaIngresar) {
         this.modeloIngresar = ingresar;
         this.ventanaIngresar = ventanaIngresar;
         this.ventanaIngresar.ingresarButton.addActionListener(this);
@@ -32,7 +32,7 @@ public class ControladorIngresar implements ActionListener{
     public void actionPerformed(ActionEvent e){
         modeloIngresar.establecerDatos((String)ventanaIngresar.productosCombo.getSelectedItem(), (int)ventanaIngresar.cantidadSpinner.getValue());
         modeloIngresar.setFechaCaducidad((int)ventanaIngresar.diaSpinner.getValue(), (int)ventanaIngresar.mesSpinner.getValue(), (int)ventanaIngresar.anioSpinner.getValue());
-        javax.swing.JOptionPane.showMessageDialog(ventanaIngresar,"Ingreso de datos: \n Nombre: "+modeloIngresar.getNombreIngresado()+"\ncantidad: "+modeloIngresar.getCantidad()+"\nfecha actual"+modeloIngresar.getFechaHoy()+"\nfecha Caducidad"+modeloIngresar.getFechaCaducidad());
+        javax.swing.JOptionPane.showMessageDialog(ventanaIngresar,"Ingreso de datos: \n Nombre: "+modeloIngresar.getProductoIngresado()+"\ncantidad: "+modeloIngresar.getCantidad()+"\nfecha actual"+modeloIngresar.getFechaHoy()+"\nfecha Caducidad"+modeloIngresar.getFechaCaducidad());
     }
     
 }

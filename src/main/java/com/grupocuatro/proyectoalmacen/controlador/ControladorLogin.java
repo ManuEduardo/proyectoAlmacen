@@ -13,7 +13,7 @@ import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
  */
 public class ControladorLogin implements ActionListener{
     private Login modeloLogin;
-    private VentanaLogin ventanaLogin;
+    private final VentanaLogin ventanaLogin;
 
     public ControladorLogin(Login modeloLogin, VentanaLogin ventanaLogin) {
         this.modeloLogin = modeloLogin;
