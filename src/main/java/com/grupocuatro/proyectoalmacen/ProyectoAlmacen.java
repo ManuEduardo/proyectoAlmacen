@@ -21,6 +21,8 @@ import com.grupocuatro.proyectoalmacen.modelo.producto.Producto;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroProducto;
 import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
+
+import com.grupocuatro.proyectoalmacen.controlador.Conexion;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
@@ -40,12 +42,15 @@ public class ProyectoAlmacen {
         RetirarStock ventanatest3 = new RetirarStock();
         Retirar retirarTest = new Retirar ();
         ControladorRetirarStock test3 = new ControladorRetirarStock(retirarTest,ventanatest3);
-        test3.iniciarVentanaRetirar();
+        //test3.iniciarVentanaRetirar();
         //----------------------------------------------------------------------------------------
         Producto productoPrueba = new Producto();
         Registrar registroPrueba = new Registrar(productoPrueba);
         RegistroProducto ventanaRegistro = new RegistroProducto();
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
         //test4.iniciarVentanaRegistrar();
+        //----------------------------------------------------------------------------------------
+        Conexion testConexion = new Conexion();
+        testConexion.Conectar();
     }
 }
