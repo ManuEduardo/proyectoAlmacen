@@ -180,7 +180,7 @@
         <Component class="javax.swing.JButton" name="retirarButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="24" green="bf" red="9e" type="rgb"/>
+              <Color blue="44" green="4f" red="f6" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="1"/>

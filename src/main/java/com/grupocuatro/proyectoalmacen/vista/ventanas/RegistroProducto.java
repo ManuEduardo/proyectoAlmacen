@@ -39,8 +39,9 @@ public class RegistroProducto extends javax.swing.JFrame {
         cantidadSpinner1 = new javax.swing.JSpinner();
         nombreField = new javax.swing.JTextField();
         nombreSeparator = new javax.swing.JSeparator();
-        descripcionTextArea = new javax.swing.JTextArea();
         presioLabel = new javax.swing.JLabel();
+        descripcionScrollPane = new javax.swing.JScrollPane();
+        descripcionTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(242, 157, 53));
@@ -103,7 +104,7 @@ public class RegistroProducto extends javax.swing.JFrame {
         jPanel1.add(seleccionarCantidadLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         cantidadSpinner1.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        cantidadSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10000, 1));
+        cantidadSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 10000, 1));
         cantidadSpinner1.setBorder(null);
         cantidadSpinner1.setFocusable(false);
         cantidadSpinner1.setMinimumSize(new java.awt.Dimension(60, 30));
@@ -116,6 +117,14 @@ public class RegistroProducto extends javax.swing.JFrame {
         nombreField.setForeground(new java.awt.Color(153, 153, 153));
         nombreField.setText("Nombre del Producto");
         nombreField.setBorder(null);
+        nombreField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nombreFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nombreFieldFocusLost(evt);
+            }
+        });
         nombreField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nombreFieldMousePressed(evt);
@@ -131,27 +140,34 @@ public class RegistroProducto extends javax.swing.JFrame {
         nombreSeparator.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(nombreSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 190, 20));
 
+        presioLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        presioLabel.setText("Seleccione el Precio");
+        jPanel1.add(presioLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
+
+        descripcionScrollPane.setBorder(null);
+
         descripcionTextArea.setBackground(new java.awt.Color(242, 157, 53));
         descripcionTextArea.setColumns(20);
-        descripcionTextArea.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         descripcionTextArea.setForeground(new java.awt.Color(153, 153, 153));
         descripcionTextArea.setRows(5);
         descripcionTextArea.setText("Descripcion");
-        descripcionTextArea.setAlignmentX(2.0F);
-        descripcionTextArea.setAlignmentY(2.0F);
-        descripcionTextArea.setAutoscrolls(false);
         descripcionTextArea.setBorder(null);
-        descripcionTextArea.setMargin(new java.awt.Insets(3, 10, 3, 10));
+        descripcionTextArea.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                descripcionTextAreaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                descripcionTextAreaFocusLost(evt);
+            }
+        });
         descripcionTextArea.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 descripcionTextAreaMousePressed(evt);
             }
         });
-        jPanel1.add(descripcionTextArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 290, 100));
+        descripcionScrollPane.setViewportView(descripcionTextArea);
 
-        presioLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        presioLabel.setText("Seleccione el Precio");
-        jPanel1.add(presioLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
+        jPanel1.add(descripcionScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 290, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,14 +192,7 @@ public class RegistroProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_registrabuttonActionPerformed
 
     private void nombreFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreFieldMousePressed
-        if(nombreField.getText().equals("Nombre del Producto")){
-            nombreField.setText("");
-            nombreField.setForeground(Color.black);
-            }
-        if(String.valueOf(descripcionTextArea.getText()).equals("Descripcion")||String.valueOf(descripcionTextArea.getText()).equals("")){
-            descripcionTextArea.setText("Descripcion");
-            descripcionTextArea.setForeground(Color.gray);
-        }
+
     }//GEN-LAST:event_nombreFieldMousePressed
 
     private void nombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldActionPerformed
@@ -191,15 +200,36 @@ public class RegistroProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreFieldActionPerformed
 
     private void descripcionTextAreaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descripcionTextAreaMousePressed
-        if(String.valueOf(descripcionTextArea.getText()).equals("Descripcion")){
-            descripcionTextArea.setText("");
-            descripcionTextArea.setForeground(Color.black);
-        }
+
+    }//GEN-LAST:event_descripcionTextAreaMousePressed
+
+    private void nombreFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusGained
+        if(nombreField.getText().equals("Nombre del Producto")){
+            nombreField.setText("");
+            nombreField.setForeground(Color.black);
+            }
+    }//GEN-LAST:event_nombreFieldFocusGained
+
+    private void nombreFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusLost
         if(nombreField.getText().equals("Nombre del Producto")||nombreField.getText().equals("")){
             nombreField.setText("Nombre del Producto");
             nombreField.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_descripcionTextAreaMousePressed
+    }//GEN-LAST:event_nombreFieldFocusLost
+
+    private void descripcionTextAreaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descripcionTextAreaFocusGained
+        if(String.valueOf(descripcionTextArea.getText()).equals("Descripcion")){
+            descripcionTextArea.setText("");
+            descripcionTextArea.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_descripcionTextAreaFocusGained
+
+    private void descripcionTextAreaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_descripcionTextAreaFocusLost
+        if(String.valueOf(descripcionTextArea.getText()).equals("Descripcion")||String.valueOf(descripcionTextArea.getText()).equals("")){
+            descripcionTextArea.setText("Descripcion");
+            descripcionTextArea.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_descripcionTextAreaFocusLost
 
     /**
      * @param args the command line arguments
@@ -240,6 +270,7 @@ public class RegistroProducto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JSpinner cantidadSpinner1;
     private javax.swing.JLabel descripcionLabel;
+    public javax.swing.JScrollPane descripcionScrollPane;
     public javax.swing.JTextArea descripcionTextArea;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField nombreField;

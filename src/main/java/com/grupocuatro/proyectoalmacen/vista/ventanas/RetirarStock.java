@@ -73,7 +73,7 @@ public class RetirarStock extends javax.swing.JFrame {
         seleccionarCantidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         seleccionarCantidadLabel.setText("Seleccione la Cantidad");
 
-        retirarButton.setBackground(new java.awt.Color(158, 191, 36));
+        retirarButton.setBackground(new java.awt.Color(246, 79, 68));
         retirarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         retirarButton.setForeground(new java.awt.Color(255, 255, 255));
         retirarButton.setText("RETIRAR");

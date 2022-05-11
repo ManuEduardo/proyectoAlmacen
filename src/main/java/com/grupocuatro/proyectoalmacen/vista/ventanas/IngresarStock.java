@@ -99,7 +99,7 @@ public class IngresarStock extends javax.swing.JFrame {
                 ingresarButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 160, 30));
+        jPanel1.add(ingresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 160, 30));
 
         fechaCaducidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         fechaCaducidadLabel.setText("Fecha de Caducidad");

@@ -63,9 +63,17 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         usuarioField.setBackground(new java.awt.Color(242, 157, 53));
         usuarioField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        usuarioField.setForeground(new java.awt.Color(242, 242, 242));
+        usuarioField.setForeground(new java.awt.Color(153, 153, 153));
         usuarioField.setText("Ingrese su usuario");
         usuarioField.setBorder(null);
+        usuarioField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usuarioFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usuarioFieldFocusLost(evt);
+            }
+        });
         usuarioField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 usuarioFieldMousePressed(evt);
@@ -86,9 +94,17 @@ public class VentanaLogin extends javax.swing.JFrame {
         contrasenaSeparator.setForeground(new java.awt.Color(0, 0, 0));
 
         contrasenaField.setBackground(new java.awt.Color(242, 157, 53));
-        contrasenaField.setForeground(new java.awt.Color(242, 242, 242));
+        contrasenaField.setForeground(new java.awt.Color(153, 153, 153));
         contrasenaField.setText("contrasena");
         contrasenaField.setBorder(null);
+        contrasenaField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                contrasenaFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                contrasenaFieldFocusLost(evt);
+            }
+        });
         contrasenaField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 contrasenaFieldMousePressed(evt);
@@ -189,31 +205,45 @@ public class VentanaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioFieldActionPerformed
 
     private void usuarioFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usuarioFieldMousePressed
-        if(usuarioField.getText().equals("Ingrese su usuario")){
-        usuarioField.setText("");
-        usuarioField.setForeground(Color.black);
-        }
-        if(String.valueOf(contrasenaField.getPassword()).equals("contrasena")||String.valueOf(contrasenaField.getPassword()).equals("")){
-        contrasenaField.setText("contrasena");
-        contrasenaField.setForeground(Color.gray);
-        }
+        
     }//GEN-LAST:event_usuarioFieldMousePressed
 
     private void contrasenaFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaFieldMousePressed
-        if(String.valueOf(contrasenaField.getPassword()).equals("contrasena")){
-        contrasenaField.setText("");
-        contrasenaField.setForeground(Color.black);
-        }
-        if(usuarioField.getText().equals("Ingrese su usuario")||usuarioField.getText().equals("")){
-        usuarioField.setText("Ingrese su usuario");
-        usuarioField.setForeground(Color.gray);
-        }
+        
     }//GEN-LAST:event_contrasenaFieldMousePressed
 
     private void entrarBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBotonMouseClicked
         //Para probar la entrada de datos
         
     }//GEN-LAST:event_entrarBotonMouseClicked
+
+    private void usuarioFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFieldFocusGained
+        if(usuarioField.getText().equals("Ingrese su usuario")){
+        usuarioField.setText("");
+        usuarioField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_usuarioFieldFocusGained
+
+    private void usuarioFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFieldFocusLost
+        if(usuarioField.getText().equals("Ingrese su usuario")||usuarioField.getText().equals("")){
+        usuarioField.setText("Ingrese su usuario");
+        usuarioField.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_usuarioFieldFocusLost
+
+    private void contrasenaFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contrasenaFieldFocusGained
+        if(String.valueOf(contrasenaField.getPassword()).equals("contrasena")){
+        contrasenaField.setText("");
+        contrasenaField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_contrasenaFieldFocusGained
+
+    private void contrasenaFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contrasenaFieldFocusLost
+        if(String.valueOf(contrasenaField.getPassword()).equals("contrasena")||String.valueOf(contrasenaField.getPassword()).equals("")){
+        contrasenaField.setText("contrasena");
+        contrasenaField.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_contrasenaFieldFocusLost
 
     /**
      * @param args the command line arguments

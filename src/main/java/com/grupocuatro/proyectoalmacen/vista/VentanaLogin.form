@@ -181,7 +181,7 @@
                   <Font name="Yu Gothic UI" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                  <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese su usuario"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -189,6 +189,8 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usuarioFieldFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usuarioFieldFocusLost"/>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usuarioFieldMousePressed"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usuarioFieldActionPerformed"/>
               </Events>
@@ -227,7 +229,7 @@
                   <Color blue="35" green="9d" red="f2" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                  <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="contrasena"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -235,6 +237,8 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contrasenaFieldFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="contrasenaFieldFocusLost"/>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="contrasenaFieldMousePressed"/>
               </Events>
               <AuxValues>

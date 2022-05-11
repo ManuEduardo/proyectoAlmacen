@@ -40,12 +40,12 @@ public class ProyectoAlmacen {
         RetirarStock ventanatest3 = new RetirarStock();
         Retirar retirarTest = new Retirar ();
         ControladorRetirarStock test3 = new ControladorRetirarStock(retirarTest,ventanatest3);
-        //test3.iniciarVentanaRetirar();
+        test3.iniciarVentanaRetirar();
         //----------------------------------------------------------------------------------------
         Producto productoPrueba = new Producto();
         Registrar registroPrueba = new Registrar(productoPrueba);
         RegistroProducto ventanaRegistro = new RegistroProducto();
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
-        test4.iniciarVentanaRegistrar();
+        //test4.iniciarVentanaRegistrar();
     }
 }
