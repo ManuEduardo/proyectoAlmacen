@@ -45,7 +45,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="seleccionarProductoLabel" min="-2" max="-2" attributes="0"/>
@@ -112,7 +112,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SELECCIONE EL PRODUCTO"/>
+            <Property name="text" type="java.lang.String" value="Seleccione el Producto"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="productosCombo">
@@ -174,7 +174,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SELECCIONE LA CANTIDAD"/>
+            <Property name="text" type="java.lang.String" value="Seleccione la Cantidad"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="retirarButton">

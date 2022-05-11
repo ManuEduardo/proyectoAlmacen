@@ -14,7 +14,7 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarStock;
  * @author manue
  */
 public class ControladorIngresarStock implements ActionListener{
-    private Ingresar modeloIngresar;
+    private final Ingresar modeloIngresar;
     private final IngresarStock ventanaIngresar;
 
     public ControladorIngresarStock(Ingresar ingresar, IngresarStock ventanaIngresar) {

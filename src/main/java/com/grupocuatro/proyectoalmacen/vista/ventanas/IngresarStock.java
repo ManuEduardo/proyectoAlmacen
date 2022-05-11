@@ -106,11 +106,11 @@ public class IngresarStock extends javax.swing.JFrame {
         jPanel1.add(fechaCaducidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         seleccionarProductoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        seleccionarProductoLabel.setText("SELECCIONE EL PRODUCTO");
+        seleccionarProductoLabel.setText("Seleccione el Producto");
         jPanel1.add(seleccionarProductoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         seleccionarCantidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        seleccionarCantidadLabel.setText("SELECCIONE LA CANTIDAD");
+        seleccionarCantidadLabel.setText("Seleccione la Cantidad");
         jPanel1.add(seleccionarCantidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         anioSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N

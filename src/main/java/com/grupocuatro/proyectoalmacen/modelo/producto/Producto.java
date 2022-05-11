@@ -10,38 +10,41 @@ package com.grupocuatro.proyectoalmacen.modelo.producto;
  */
 public class Producto {
     //SE CREA LA CLASE PRODUCTO Y SE INSTANCIAN GETS AND SETS
-    private String nombre;
-    private String descripcion;
-    private int idCodigo;
+    private String nombreProducto;
+    private String descripcionProducto;
+    private float precioProducto;
+    private int cantidadProducto;
 
-    public Producto(String nombre, String descripcion, int idCodigo) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.idCodigo = idCodigo;
-    }
-    
-    public String getNombre() {
-        return nombre;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionProducto() {
+        return descripcionProducto;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
     }
 
-    public int getIdCodigo() {
-        return idCodigo;
+    public float getPrecioProducto() {
+        return precioProducto;
     }
 
-    public void setIdCodigo(int idCodigo) {
-        this.idCodigo = idCodigo;
+    public void setPrecioProducto(float precioProducto) {
+        this.precioProducto = precioProducto;
+    }
+
+    public int getCantidadProducto() {
+        return cantidadProducto;
+    }
+
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
     
 }

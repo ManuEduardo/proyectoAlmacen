@@ -48,7 +48,7 @@ public class RetirarStock extends javax.swing.JFrame {
         tituloLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         seleccionarProductoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        seleccionarProductoLabel.setText("SELECCIONE EL PRODUCTO");
+        seleccionarProductoLabel.setText("Seleccione el Producto");
 
         productosCombo.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         productosCombo.setMaximumRowCount(100);
@@ -71,7 +71,7 @@ public class RetirarStock extends javax.swing.JFrame {
         cantidadSpinner.setRequestFocusEnabled(false);
 
         seleccionarCantidadLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        seleccionarCantidadLabel.setText("SELECCIONE LA CANTIDAD");
+        seleccionarCantidadLabel.setText("Seleccione la Cantidad");
 
         retirarButton.setBackground(new java.awt.Color(158, 191, 36));
         retirarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -96,7 +96,7 @@ public class RetirarStock extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(seleccionarProductoLabel)

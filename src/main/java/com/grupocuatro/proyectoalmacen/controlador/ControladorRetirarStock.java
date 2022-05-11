@@ -14,7 +14,7 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Retirar;
  * @author manue
  */
 public class ControladorRetirarStock implements ActionListener{
-    private RetirarStock ventanaRetirar;
+    private final RetirarStock ventanaRetirar;
     private final Retirar modeloRetirar;
 
     public ControladorRetirarStock(Retirar modeloRetirar, RetirarStock ventanaRetirar) {
