@@ -213,8 +213,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_contrasenaFieldMousePressed
 
     private void entrarBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBotonMouseClicked
-        //Para probar la entrada de datos
-        
+
     }//GEN-LAST:event_entrarBotonMouseClicked
 
     private void usuarioFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFieldFocusGained

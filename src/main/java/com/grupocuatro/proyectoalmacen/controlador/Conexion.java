@@ -20,7 +20,6 @@ public class Conexion {
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conexion = DriverManager.getConnection(url, user, pass);
-            JOptionPane.showMessageDialog(null,"Se logrorogiffsdfhksajdhf");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"chale "+e.toString());
         }

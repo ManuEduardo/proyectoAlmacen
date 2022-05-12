@@ -23,6 +23,9 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroProducto;
 import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
 
 import com.grupocuatro.proyectoalmacen.controlador.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
@@ -32,7 +35,7 @@ public class ProyectoAlmacen {
         VentanaLogin ventanaTest = new VentanaLogin();
         Login loginTest = new Login();
         ControladorLogin test = new ControladorLogin(loginTest,ventanaTest);
-        //test.IniciarVentanaLogin();
+        test.IniciarVentanaLogin();
         //----------------------------------------------------------------------------------------
         IngresarStock ventanatest2 = new IngresarStock();
         Ingresar ingresarTest = new Ingresar();
@@ -50,7 +53,26 @@ public class ProyectoAlmacen {
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
-        Conexion testConexion = new Conexion();
-        testConexion.Conectar();
+        Conexion testConexion = new Conexion(); //objeto para conectarse
+        Connection acceso;
+        PreparedStatement preState;
+        ResultSet resultado;
+        String sql = "Select * from Producto";//consulta sql
+        try{
+            acceso = testConexion.Conectar();//se conecta
+            preState = acceso.prepareStatement(sql);//la coneccion se le carga la consulta
+            resultado = preState.executeQuery();//a la consulta cargada se ejecuta y accedes a la tabla del resultado, todo esto en la base
+            while(resultado.next()){//se itera en la tabla del resultado se cuenta desde 1
+                System.out.println("-----------------------");
+                System.out.println(resultado.getInt(1));
+                System.out.println(resultado.getString(2));
+                System.out.println(resultado.getString(3));
+                System.out.println(resultado.getFloat(4));
+                System.out.println(resultado.getInt(5));
+            }
+        }catch(Exception e){
+            System.out.println("error: "+e);
+        }
+        
     }
 }
