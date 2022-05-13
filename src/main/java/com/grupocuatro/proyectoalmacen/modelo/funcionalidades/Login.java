@@ -9,6 +9,7 @@ package com.grupocuatro.proyectoalmacen.modelo.funcionalidades;
  * @author manue
  */
 public class Login {
+    //establecer clase usuario
     private String usuario;
     private String contrasena;
 
