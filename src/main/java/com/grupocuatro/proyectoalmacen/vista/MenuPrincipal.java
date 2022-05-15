@@ -3,18 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.grupocuatro.proyectoalmacen.vista;
+import  java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
  * @author manue
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+    protected Date fecha = new Date();
+    protected SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/YYYY");
+    protected String fechaHoy = fechaFormato.format(fecha);
 
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        fechaLabel.setText(fechaHoy);
     }
 
     /**
@@ -26,21 +32,389 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fondoJPanel = new javax.swing.JPanel();
+        arribaJPanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        fechaLabel = new javax.swing.JLabel();
+        izquierdaJPanel = new javax.swing.JPanel();
+        agregarButton = new javax.swing.JButton();
+        eliminarPButton = new javax.swing.JButton();
+        verUsuariosButton = new javax.swing.JButton();
+        EliminarUsuarioButton = new javax.swing.JButton();
+        actualizarButton = new javax.swing.JButton();
+        crearUsuarioButton = new javax.swing.JButton();
+        infoJPanel = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        nombreLabel = new javax.swing.JLabel();
+        tipoLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        productosJTable = new javax.swing.JTable();
+        registroButton = new javax.swing.JButton();
+        registrabutton1 = new javax.swing.JButton();
+        retirarButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setSize(new java.awt.Dimension(1200, 700));
+
+        fondoJPanel.setBackground(new java.awt.Color(242, 174, 48));
+        fondoJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        arribaJPanel.setBackground(new java.awt.Color(242, 157, 53));
+        arribaJPanel.setFocusable(false);
+        arribaJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titleLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 100)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        titleLabel.setText("HEART FOOD");
+        arribaJPanel.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 6, -1, -1));
+
+        fechaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        fechaLabel.setForeground(new java.awt.Color(242, 242, 242));
+        fechaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fechaLabel.setText("01/01/2022");
+        fechaLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        arribaJPanel.add(fechaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 80, -1, -1));
+
+        fondoJPanel.add(arribaJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1000, 150));
+
+        izquierdaJPanel.setBackground(new java.awt.Color(242, 157, 53));
+        izquierdaJPanel.setFocusable(false);
+        izquierdaJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        agregarButton.setBackground(new java.awt.Color(158, 191, 36));
+        agregarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        agregarButton.setForeground(new java.awt.Color(255, 255, 255));
+        agregarButton.setText("AGREGAR STOCK");
+        agregarButton.setBorder(null);
+        agregarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        agregarButton.setFocusable(false);
+        agregarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarButtonMouseClicked(evt);
+            }
+        });
+        agregarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(agregarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 160, 40));
+
+        eliminarPButton.setBackground(new java.awt.Color(217, 11, 49));
+        eliminarPButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        eliminarPButton.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarPButton.setText("ELIMINAR PRODUCTO");
+        eliminarPButton.setBorder(null);
+        eliminarPButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminarPButton.setFocusable(false);
+        eliminarPButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarPButtonMouseClicked(evt);
+            }
+        });
+        eliminarPButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarPButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(eliminarPButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 100, 190, 69));
+
+        verUsuariosButton.setBackground(new java.awt.Color(158, 191, 36));
+        verUsuariosButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        verUsuariosButton.setForeground(new java.awt.Color(255, 255, 255));
+        verUsuariosButton.setText("VER USUARIOS");
+        verUsuariosButton.setBorder(null);
+        verUsuariosButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        verUsuariosButton.setFocusable(false);
+        verUsuariosButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verUsuariosButtonMouseClicked(evt);
+            }
+        });
+        verUsuariosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verUsuariosButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(verUsuariosButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 213, 160, 40));
+
+        EliminarUsuarioButton.setBackground(new java.awt.Color(217, 11, 49));
+        EliminarUsuarioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        EliminarUsuarioButton.setForeground(new java.awt.Color(255, 255, 255));
+        EliminarUsuarioButton.setText("ELIMINAR USUARIO");
+        EliminarUsuarioButton.setBorder(null);
+        EliminarUsuarioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EliminarUsuarioButton.setFocusable(false);
+        EliminarUsuarioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EliminarUsuarioButtonMouseClicked(evt);
+            }
+        });
+        EliminarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarUsuarioButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(EliminarUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 388, 179, 40));
+
+        actualizarButton.setBackground(new java.awt.Color(158, 191, 36));
+        actualizarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        actualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarButton.setText("ACTUALIZAR");
+        actualizarButton.setBorder(null);
+        actualizarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actualizarButton.setFocusable(false);
+        actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarButtonMouseClicked(evt);
+            }
+        });
+        actualizarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 160, 40));
+
+        crearUsuarioButton.setBackground(new java.awt.Color(158, 191, 36));
+        crearUsuarioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        crearUsuarioButton.setForeground(new java.awt.Color(255, 255, 255));
+        crearUsuarioButton.setText("CREAR USUARIO");
+        crearUsuarioButton.setBorder(null);
+        crearUsuarioButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        crearUsuarioButton.setFocusable(false);
+        crearUsuarioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearUsuarioButtonMouseClicked(evt);
+            }
+        });
+        crearUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearUsuarioButtonActionPerformed(evt);
+            }
+        });
+        izquierdaJPanel.add(crearUsuarioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 299, 160, 40));
+
+        fondoJPanel.add(izquierdaJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 200, 550));
+
+        infoJPanel.setBackground(new java.awt.Color(242, 133, 0));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        nombreLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(242, 242, 242));
+        nombreLabel.setText("Nombre");
+
+        tipoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        tipoLabel.setForeground(new java.awt.Color(242, 242, 242));
+        tipoLabel.setText("TipoUsuario");
+
+        javax.swing.GroupLayout infoJPanelLayout = new javax.swing.GroupLayout(infoJPanel);
+        infoJPanel.setLayout(infoJPanelLayout);
+        infoJPanelLayout.setHorizontalGroup(
+            infoJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoJPanelLayout.createSequentialGroup()
+                .addGroup(infoJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoJPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1))
+                    .addGroup(infoJPanelLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(tipoLabel)
+                        .addGap(0, 46, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(infoJPanelLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(nombreLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        infoJPanelLayout.setVerticalGroup(
+            infoJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoJPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(nombreLabel)
+                .addGap(32, 32, 32)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tipoLabel)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        fondoJPanel.add(infoJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 150));
+
+        productosJTable.setBackground(new java.awt.Color(242, 242, 242));
+        productosJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        productosJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "PRODUCTO", "DESCRIPCIÓN", "CANTIDAD", "PRECIO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        productosJTable.setRowHeight(30);
+        productosJTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        productosJTable.setSelectionForeground(new java.awt.Color(255, 204, 153));
+        productosJTable.setShowGrid(true);
+        jScrollPane1.setViewportView(productosJTable);
+
+        fondoJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 910, -1));
+
+        registroButton.setBackground(new java.awt.Color(158, 191, 36));
+        registroButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        registroButton.setForeground(new java.awt.Color(255, 255, 255));
+        registroButton.setText("VER REGISTRO");
+        registroButton.setBorder(null);
+        registroButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        registroButton.setFocusable(false);
+        registroButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registroButtonMouseClicked(evt);
+            }
+        });
+        registroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registroButtonActionPerformed(evt);
+            }
+        });
+        fondoJPanel.add(registroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 620, 160, 40));
+
+        registrabutton1.setBackground(new java.awt.Color(217, 11, 49));
+        registrabutton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        registrabutton1.setForeground(new java.awt.Color(255, 255, 255));
+        registrabutton1.setText("SALIR SESIÓN");
+        registrabutton1.setBorder(null);
+        registrabutton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        registrabutton1.setFocusable(false);
+        registrabutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registrabutton1MouseClicked(evt);
+            }
+        });
+        registrabutton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrabutton1ActionPerformed(evt);
+            }
+        });
+        fondoJPanel.add(registrabutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 160, 40));
+
+        retirarButton.setBackground(new java.awt.Color(217, 11, 49));
+        retirarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        retirarButton.setForeground(new java.awt.Color(255, 255, 255));
+        retirarButton.setText("RETIRAR STOCK");
+        retirarButton.setBorder(null);
+        retirarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        retirarButton.setFocusable(false);
+        retirarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                retirarButtonMouseClicked(evt);
+            }
+        });
+        retirarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retirarButtonActionPerformed(evt);
+            }
+        });
+        fondoJPanel.add(retirarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 620, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registroButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registroButtonMouseClicked
+
+    }//GEN-LAST:event_registroButtonMouseClicked
+
+    private void registroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroButtonActionPerformed
+
+    }//GEN-LAST:event_registroButtonActionPerformed
+
+    private void registrabutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrabutton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrabutton1MouseClicked
+
+    private void registrabutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrabutton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrabutton1ActionPerformed
+
+    private void retirarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retirarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_retirarButtonMouseClicked
+
+    private void retirarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_retirarButtonActionPerformed
+
+    private void agregarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarButtonMouseClicked
+
+    private void agregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarButtonActionPerformed
+
+    private void eliminarPButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarPButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarPButtonMouseClicked
+
+    private void eliminarPButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarPButtonActionPerformed
+
+    private void verUsuariosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verUsuariosButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verUsuariosButtonMouseClicked
+
+    private void verUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuariosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verUsuariosButtonActionPerformed
+
+    private void EliminarUsuarioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminarUsuarioButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EliminarUsuarioButtonMouseClicked
+
+    private void EliminarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EliminarUsuarioButtonActionPerformed
+
+    private void actualizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonMouseClicked
+
+    private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonActionPerformed
+
+    private void crearUsuarioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearUsuarioButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearUsuarioButtonMouseClicked
+
+    private void crearUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearUsuarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +452,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton EliminarUsuarioButton;
+    public javax.swing.JButton actualizarButton;
+    public javax.swing.JButton agregarButton;
+    private javax.swing.JPanel arribaJPanel;
+    public javax.swing.JButton crearUsuarioButton;
+    public javax.swing.JButton eliminarPButton;
+    private javax.swing.JLabel fechaLabel;
+    private javax.swing.JPanel fondoJPanel;
+    private javax.swing.JPanel infoJPanel;
+    private javax.swing.JPanel izquierdaJPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JTable productosJTable;
+    public javax.swing.JButton registrabutton1;
+    public javax.swing.JButton registroButton;
+    public javax.swing.JButton retirarButton;
+    private javax.swing.JLabel tipoLabel;
+    private javax.swing.JLabel titleLabel;
+    public javax.swing.JButton verUsuariosButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,6 +22,8 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroProducto;
 import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
 
+import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
+
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class ProyectoAlmacen {
         VentanaLogin ventanaTest = new VentanaLogin();
         Login loginTest = new Login();
         ControladorLogin test = new ControladorLogin(loginTest,ventanaTest);
-        test.IniciarVentanaLogin();
+        //test.IniciarVentanaLogin();
         //----------------------------------------------------------------------------------------
         IngresarStock ventanatest2 = new IngresarStock();
         Ingresar ingresarTest = new Ingresar();
@@ -49,6 +51,8 @@ public class ProyectoAlmacen {
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
+        MenuPrincipal ventanaPrincipal = new MenuPrincipal();
+        ventanaPrincipal.setVisible(true);
 
     }
 }

@@ -112,6 +112,8 @@ public class VentanaLogin extends javax.swing.JFrame {
         });
 
         entrarBoton.setBackground(new java.awt.Color(246, 79, 68));
+        entrarBoton.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        entrarBoton.setForeground(new java.awt.Color(255, 255, 255));
         entrarBoton.setText("ENTRAR");
         entrarBoton.setBorder(null);
         entrarBoton.setBorderPainted(false);
