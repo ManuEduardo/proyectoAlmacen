@@ -119,11 +119,6 @@ public class VentanaLogin extends javax.swing.JFrame {
         entrarBoton.setBorderPainted(false);
         entrarBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         entrarBoton.setFocusable(false);
-        entrarBoton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                entrarBotonMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout fondoFormLoginLayout = new javax.swing.GroupLayout(fondoFormLogin);
         fondoFormLogin.setLayout(fondoFormLoginLayout);
@@ -213,10 +208,6 @@ public class VentanaLogin extends javax.swing.JFrame {
     private void contrasenaFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contrasenaFieldMousePressed
         
     }//GEN-LAST:event_contrasenaFieldMousePressed
-
-    private void entrarBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBotonMouseClicked
-
-    }//GEN-LAST:event_entrarBotonMouseClicked
 
     private void usuarioFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFieldFocusGained
         if(usuarioField.getText().equals("Ingrese su usuario")){

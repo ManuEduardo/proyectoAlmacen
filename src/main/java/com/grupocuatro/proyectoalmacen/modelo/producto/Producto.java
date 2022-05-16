@@ -10,10 +10,19 @@ package com.grupocuatro.proyectoalmacen.modelo.producto;
  */
 public class Producto {
     //SE CREA LA CLASE PRODUCTO Y SE INSTANCIAN GETS AND SETS
+    private int idProducto;
     private String nombreProducto;
     private String descripcionProducto;
     private float precioProducto;
     private int cantidadProducto;
+
+    public int getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
+    }
 
     public String getNombreProducto() {
         return nombreProducto;

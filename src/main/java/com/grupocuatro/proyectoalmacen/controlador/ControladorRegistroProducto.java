@@ -6,7 +6,7 @@ package com.grupocuatro.proyectoalmacen.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroProducto;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistrarProducto;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
 /**
  *
@@ -14,10 +14,10 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
  */
 public class ControladorRegistroProducto implements ActionListener{
     //al crear el objeto, el constructor de modeloRegistro debe recibir un objeto producto
-    private final RegistroProducto ventanaRegistro;
+    private final RegistrarProducto ventanaRegistro;
     private final Registrar modeloRegistro;
 
-    public ControladorRegistroProducto(RegistroProducto ventanaRegistro, Registrar modeloRegistro) {
+    public ControladorRegistroProducto(RegistrarProducto ventanaRegistro, Registrar modeloRegistro) {
         this.ventanaRegistro = ventanaRegistro;
         this.modeloRegistro = modeloRegistro;
         this.ventanaRegistro.registrabutton.addActionListener(this);

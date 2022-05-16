@@ -19,10 +19,11 @@ import com.grupocuatro.proyectoalmacen.controlador.ControladorRetirarStock;
 
 import com.grupocuatro.proyectoalmacen.modelo.producto.Producto;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
-import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroProducto;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistrarProducto;
 import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
 
 import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
+import com.grupocuatro.proyectoalmacen.controlador.ControladorMenuPrincipal;
 
 public class ProyectoAlmacen {
 
@@ -47,12 +48,13 @@ public class ProyectoAlmacen {
         //----------------------------------------------------------------------------------------
         Producto productoPrueba = new Producto();
         Registrar registroPrueba = new Registrar(productoPrueba);
-        RegistroProducto ventanaRegistro = new RegistroProducto();
+        RegistrarProducto ventanaRegistro = new RegistrarProducto();
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
         MenuPrincipal ventanaPrincipal = new MenuPrincipal();
-        ventanaPrincipal.setVisible(true);
+        ControladorMenuPrincipal controladorMenu = new ControladorMenuPrincipal(ventanaPrincipal);
+        controladorMenu.IniciarVentanaMenu();
 
     }
 }
