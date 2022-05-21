@@ -14,7 +14,7 @@ import java.sql.ResultSet;
  *
  * @author manue
  */
-public class ControladorLogin{
+public abstract class ControladorLogin{
     private final Login modeloLogin;
     private final VentanaLogin ventanaLogin;
     
@@ -23,6 +23,15 @@ public class ControladorLogin{
     private PreparedStatement preState;
     private ResultSet resultado;
     private String TipoUsuario = null; 
+    private String NombreUsuario = null;
+
+    public String getNombreUsuario() {
+        return NombreUsuario;
+    }
+
+    public void setNombreUsuario(String NombreUsuario) {
+        this.NombreUsuario = NombreUsuario;
+    }
 
     public String getTipoUsuario() {
         return TipoUsuario;
@@ -31,6 +40,7 @@ public class ControladorLogin{
     public void setTipoUsuario(String TipoUsuario) {
         this.TipoUsuario = TipoUsuario;
     }
+    
     
     public ControladorLogin(Login modeloLogin, VentanaLogin ventanaLogin) {
         this.modeloLogin = modeloLogin;
@@ -41,12 +51,37 @@ public class ControladorLogin{
         //Se establece la coneccion
     }
     
+    
+    
     //Funcion para mostrar ventana de login
     public void IniciarVentanaLogin(){
         ventanaLogin.setVisible(true);
         ventanaLogin.setTitle("Ventana Login");
     }
+  
     
+
+    public abstract  void funcionalidadButtonLogin();
+    //Funcion para validad usuario y entrar a la ventana principal
+    private void entrarBotonValidador(java.awt.event.MouseEvent evt) {
+        //tValidador de usuario
+        String usuarioIngresado = (String)ventanaLogin.usuarioField.getText().trim();
+        String contrasenaIngresada = String.valueOf(ventanaLogin.contrasenaField.getPassword()).trim();
+        
+        if (validadorDeDatos(usuarioIngresado,contrasenaIngresada)){
+            funcionalidadButtonLogin();//boton usado en el controlador principal
+            //javax.swing.JOptionPane.showMessageDialog(ventanaLogin,"Ingreso de datos: \n Usuario: "+modeloLogin.getUsuario()+"\n Contraseña: "+modeloLogin.getContrasena());
+        }else{
+            setTipoUsuario(null);
+            setNombreUsuario(null);
+        }
+        //verificar logeo
+        System.out.println(getTipoUsuario());
+    }
+    
+        
+    
+    //Funcion para validar datos
     public boolean validadorDeDatos(String usuarioIngresado,String contrasenaIngresada){
         //que los datos no esten vacios
         if("".equals(usuarioIngresado)||"".equals(contrasenaIngresada)){
@@ -55,9 +90,9 @@ public class ControladorLogin{
         }else if("Ingrese su usuario".equals(usuarioIngresado)||"contrasena".equals(contrasenaIngresada)){
             javax.swing.JOptionPane.showMessageDialog(ventanaLogin,"DATOS INVALIDOS");
             return false;
-            
         }
-        //Establecer coneccion;
+        
+        //Establecer conexion;
         String sql = "Select * from Usuario";
         try{
             acceso = conexionLogin.Conectar();//se conecta
@@ -66,32 +101,18 @@ public class ControladorLogin{
             while(resultado.next()){//se itera en la tabla del resultado se cuenta desde 1S
                 if(resultado.getString(2).equals(usuarioIngresado)&&resultado.getString(3).equals(contrasenaIngresada)){
                     modeloLogin.establecerDatos(usuarioIngresado, contrasenaIngresada);
+                    //Se establecen datos para el uso de funciones en el menu principal
                     setTipoUsuario(resultado.getString(4));
+                    setNombreUsuario(resultado.getString(2));
                     return true;
                 }
             }
         }catch(Exception e){
             System.out.println("error: "+e);
             return false;
-            
         }
+        //Si no se ejecuta el trycatch
         javax.swing.JOptionPane.showMessageDialog(ventanaLogin,"NO SE HAN ENCONTRADO LOS DATOS");
         return false;
-    }
-    
-    
-    //Funcion para validad usuario y entrar a la ventana principal
-    private void entrarBotonValidador(java.awt.event.MouseEvent evt) {
-        //tValidador de usuario
-        String usuarioIngresado = (String)ventanaLogin.usuarioField.getText().trim();
-        String contrasenaIngresada = String.valueOf(ventanaLogin.contrasenaField.getPassword()).trim();
-        
-        if (validadorDeDatos(usuarioIngresado,contrasenaIngresada)){
-            javax.swing.JOptionPane.showMessageDialog(ventanaLogin,"Ingreso de datos: \n Usuario: "+modeloLogin.getUsuario()+"\n Contraseña: "+modeloLogin.getContrasena());
-        }else{
-            setTipoUsuario(null);
-        }
-        //verificar logeo
-        System.out.println(getTipoUsuario());
     }
 }

@@ -25,17 +25,16 @@ import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
 import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
 import com.grupocuatro.proyectoalmacen.controlador.ControladorMenuPrincipal;
 
+import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
         System.out.println("Testeo de clases y metodos");
         //Para testear
         //----------------------------------------------------------------------------------------
-        VentanaLogin ventanaTest = new VentanaLogin();
-        Login loginTest = new Login();
-        ControladorLogin test = new ControladorLogin(loginTest,ventanaTest);
-        //test.IniciarVentanaLogin();
+
         //----------------------------------------------------------------------------------------
+        
         IngresarStock ventanatest2 = new IngresarStock();
         Ingresar ingresarTest = new Ingresar();
         ControladorIngresarStock test2 = new ControladorIngresarStock(ingresarTest,ventanatest2);
@@ -52,9 +51,9 @@ public class ProyectoAlmacen {
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
-        MenuPrincipal ventanaPrincipal = new MenuPrincipal();
-        ControladorMenuPrincipal controladorMenu = new ControladorMenuPrincipal(ventanaPrincipal);
-        controladorMenu.IniciarVentanaMenu();
+        //----------------------------------------------------------------------------------------------------------------
+        LogicaModeloVista testuwu = new LogicaModeloVista();
+        testuwu.app();
 
     }
 }

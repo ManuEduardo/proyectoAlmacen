@@ -39,6 +39,12 @@ public class ControladorMenuPrincipal {
         ventanaMenu.setTitle("Menu Principal");
     }
     
+    
+    public void datosLoggeo(String nombre,String tipo){
+        ventanaMenu.nombreLabel.setText(nombre);
+        ventanaMenu.tipoLabel.setText(tipo);
+    }
+    
     //Se lista los productos
     public List listar(){
         List<Producto> listaProductos = new ArrayList<>();

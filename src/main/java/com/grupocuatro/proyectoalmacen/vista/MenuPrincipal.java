@@ -162,13 +162,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         nombreLabel.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
         nombreLabel.setForeground(new java.awt.Color(242, 242, 242));
+        nombreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombreLabel.setText("Nombre");
-        infoJPanel.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 24, -1, -1));
+        infoJPanel.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 200, -1));
 
         tipoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         tipoLabel.setForeground(new java.awt.Color(242, 242, 242));
+        tipoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tipoLabel.setText("TipoUsuario");
-        infoJPanel.add(tipoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 104, -1, -1));
+        infoJPanel.add(tipoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 104, 190, -1));
 
         fondoJPanel.add(infoJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 150));
 
@@ -357,13 +359,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel izquierdaJPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel nombreLabel;
+    public javax.swing.JLabel nombreLabel;
     public javax.swing.JTable productosJTable;
     public javax.swing.JButton registrabutton1;
     public javax.swing.JButton registrarProductoButton;
     public javax.swing.JButton registroButton;
     public javax.swing.JButton retirarButton;
-    private javax.swing.JLabel tipoLabel;
+    public javax.swing.JLabel tipoLabel;
     private javax.swing.JLabel titleLabel;
     public javax.swing.JButton verUsuariosButton;
     // End of variables declaration//GEN-END:variables
