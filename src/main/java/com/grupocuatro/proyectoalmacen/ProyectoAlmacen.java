@@ -4,26 +4,21 @@
  */
 
 package com.grupocuatro.proyectoalmacen;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorLogin;
-import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
-import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
 
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Ingresar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.IngresarStock;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorIngresarStock;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorIngresarStock;
 
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Retirar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RetirarStock;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorRetirarStock;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorRetirarStock;
 
 
 import com.grupocuatro.proyectoalmacen.modelo.producto.Producto;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistrarProducto;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorRegistroProducto;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorRegistroProducto;
 
-import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
-import com.grupocuatro.proyectoalmacen.controlador.ControladorMenuPrincipal;
 
 import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
@@ -48,7 +43,7 @@ public class ProyectoAlmacen {
         Producto productoPrueba = new Producto();
         Registrar registroPrueba = new Registrar(productoPrueba);
         RegistrarProducto ventanaRegistro = new RegistrarProducto();
-        ControladorRegistroProducto  test4 = new ControladorRegistroProducto(ventanaRegistro,registroPrueba);
+        ControladorRegistroProducto  test4 = new ControladorRegistroProducto(registroPrueba,ventanaRegistro);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------------------

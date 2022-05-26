@@ -48,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         tipoLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         productosJTable = new javax.swing.JTable();
-        registrabutton1 = new javax.swing.JButton();
+        salirbutton = new javax.swing.JButton();
         eliminarPButton = new javax.swing.JButton();
         actualizarButton = new javax.swing.JButton();
 
@@ -225,19 +225,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         fondoJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 910, -1));
 
-        registrabutton1.setBackground(new java.awt.Color(217, 11, 49));
-        registrabutton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        registrabutton1.setForeground(new java.awt.Color(255, 255, 255));
-        registrabutton1.setText("SALIR SESIÓN");
-        registrabutton1.setBorder(null);
-        registrabutton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        registrabutton1.setFocusable(false);
-        registrabutton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        salirbutton.setBackground(new java.awt.Color(217, 11, 49));
+        salirbutton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        salirbutton.setForeground(new java.awt.Color(255, 255, 255));
+        salirbutton.setText("SALIR SESIÓN");
+        salirbutton.setBorder(null);
+        salirbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salirbutton.setFocusable(false);
+        salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                registrabutton1MouseClicked(evt);
+                salirbuttonMouseClicked(evt);
             }
         });
-        fondoJPanel.add(registrabutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 630, 160, 50));
+        fondoJPanel.add(salirbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 630, 160, 50));
 
         eliminarPButton.setBackground(new java.awt.Color(217, 11, 49));
         eliminarPButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
@@ -285,9 +285,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_registroButtonMouseClicked
 
-    private void registrabutton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrabutton1MouseClicked
+    private void salirbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirbuttonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_registrabutton1MouseClicked
+    }//GEN-LAST:event_salirbuttonMouseClicked
 
     private void retirarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retirarButtonMouseClicked
         // TODO add your handling code here:
@@ -361,10 +361,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel nombreLabel;
     public javax.swing.JTable productosJTable;
-    public javax.swing.JButton registrabutton1;
     public javax.swing.JButton registrarProductoButton;
     public javax.swing.JButton registroButton;
     public javax.swing.JButton retirarButton;
+    public javax.swing.JButton salirbutton;
     public javax.swing.JLabel tipoLabel;
     private javax.swing.JLabel titleLabel;
     public javax.swing.JButton verUsuariosButton;

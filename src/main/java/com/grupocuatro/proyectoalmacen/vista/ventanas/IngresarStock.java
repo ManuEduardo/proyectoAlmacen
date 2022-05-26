@@ -45,7 +45,7 @@ public class IngresarStock extends javax.swing.JFrame {
         diaLabel = new javax.swing.JLabel();
         mesLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(450, 330));
         setResizable(false);
         setSize(new java.awt.Dimension(450, 330));

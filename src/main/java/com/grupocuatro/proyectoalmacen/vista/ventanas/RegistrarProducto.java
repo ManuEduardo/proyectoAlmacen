@@ -43,7 +43,7 @@ public class RegistrarProducto extends javax.swing.JFrame {
         descripcionScrollPane = new javax.swing.JScrollPane();
         descripcionTextArea = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 157, 53));
         setMinimumSize(new java.awt.Dimension(400, 450));
         setResizable(false);

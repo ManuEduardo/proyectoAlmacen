@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.grupocuatro.proyectoalmacen.controlador;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorMenuPrincipal;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorLogin;
 import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
 

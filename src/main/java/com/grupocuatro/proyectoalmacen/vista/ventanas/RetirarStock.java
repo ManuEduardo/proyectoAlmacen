@@ -34,7 +34,7 @@ public class RetirarStock extends javax.swing.JFrame {
         seleccionarCantidadLabel = new javax.swing.JLabel();
         retirarButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(450, 330));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

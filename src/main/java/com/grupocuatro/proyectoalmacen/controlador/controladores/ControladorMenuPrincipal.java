@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupocuatro.proyectoalmacen.controlador;
+package com.grupocuatro.proyectoalmacen.controlador.controladores;
+import com.grupocuatro.proyectoalmacen.controlador.Conexion;
 import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
 import com.grupocuatro.proyectoalmacen.modelo.producto.Producto;
         
@@ -20,23 +21,80 @@ import javax.swing.table.DefaultTableModel;
  * @author manue
  */
 public class ControladorMenuPrincipal {
+    private ControladorMenuVentanas controladorVentanas;
     private final MenuPrincipal ventanaMenu;
     private DefaultTableModel modeloTablaProducto = new DefaultTableModel();
-    
+
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
     private PreparedStatement preState;
     private ResultSet resultado;
+    
+    private String permisoUsuario;
 
     public ControladorMenuPrincipal(MenuPrincipal ventanaMenu) {
-        this.ventanaMenu = ventanaMenu;
+        this.controladorVentanas = new ControladorMenuVentanas();
+        this.ventanaMenu = new MenuPrincipal();
+        this.ventanaMenu.ingresarStockButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //ingresarStockButtonMouseClicked(evt);
+                controladorVentanas.controladorIngresar.iniciarVentanaIngresar();
+            }
+        });
+        this.ventanaMenu.verUsuariosButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //verUsuariosButtonMouseClicked(evt);
+            }
+        });
+        this.ventanaMenu.registrarProductoButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //registrarProductoButtonMouseClicked(evt);
+                controladorVentanas.controladorRegistrar.iniciarVentanaRegistrar();
+            }
+        });
+        this.ventanaMenu.registroButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //registroButtonMouseClicked(evt);
+            }
+        });
+        this.ventanaMenu.retirarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //retirarButtonMouseClicked(evt);
+                controladorVentanas.controladorRetirar.iniciarVentanaRetirar();
+            }
+        });
+        this.ventanaMenu.salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //salirbuttonMouseClicked(evt);
+            }
+        });
+        this.ventanaMenu.eliminarPButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //eliminarPButtonMouseClicked(evt);
+            }
+        });
+        this.ventanaMenu.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //actualizarButtonMouseClicked(evt);
+            }
+        });
     }
     
     
     public void IniciarVentanaMenu(){
         listarProductos();
+        permisoUsuario = ventanaMenu.tipoLabel.getText();
         ventanaMenu.setVisible(true);
         ventanaMenu.setTitle("Menu Principal");
+        System.out.println("Prueba "+permisoUsuario);
     }
     
     
@@ -82,6 +140,7 @@ public class ControladorMenuPrincipal {
         }
         ventanaMenu.productosJTable.setModel(modeloTablaProducto);
     }
+    
     
     
 }

@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupocuatro.proyectoalmacen.controlador;
+package com.grupocuatro.proyectoalmacen.controlador.controladores;
+import com.grupocuatro.proyectoalmacen.controlador.Conexion;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
 import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
 
@@ -62,6 +63,8 @@ public abstract class ControladorLogin{
     
 
     public abstract  void funcionalidadButtonLogin();
+    
+    
     //Funcion para validad usuario y entrar a la ventana principal
     private void entrarBotonValidador(java.awt.event.MouseEvent evt) {
         //tValidador de usuario
@@ -75,8 +78,6 @@ public abstract class ControladorLogin{
             setTipoUsuario(null);
             setNombreUsuario(null);
         }
-        //verificar logeo
-        System.out.println(getTipoUsuario());
     }
     
         
