@@ -25,11 +25,17 @@ public class ControladorMenuVentanas {
     private Registrar modeloRegistrar = new Registrar(producto);
     private RegistrarProducto ventanaRegistrar = new RegistrarProducto();
     public ControladorRegistroProducto  controladorRegistrar;
+    
+    public ControrladorRegistroIngresoSalida controladorRegistros;
+    
+    public ControladorVerUsuarios controladorUsuarios;
 
     public ControladorMenuVentanas() {
         this.controladorIngresar = new ControladorIngresarStock(modeloIngresar,ventanaIngresar);
         this.controladorRegistrar = new ControladorRegistroProducto(modeloRegistrar,ventanaRegistrar);
         this.controladorRetirar = new ControladorRetirarStock(modeloRetirar,ventanaRetirar);
+        this.controladorRegistros = new ControrladorRegistroIngresoSalida();
+        this.controladorUsuarios = new ControladorVerUsuarios();
     }
     
     

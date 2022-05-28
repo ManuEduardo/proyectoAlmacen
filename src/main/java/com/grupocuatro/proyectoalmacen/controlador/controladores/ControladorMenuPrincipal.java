@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author manue
  */
-public class ControladorMenuPrincipal {
+public class ControladorMenuPrincipal implements CRUD{
     private ControladorMenuVentanas controladorVentanas;
     private final MenuPrincipal ventanaMenu;
     private DefaultTableModel modeloTablaProducto = new DefaultTableModel();
@@ -35,37 +35,53 @@ public class ControladorMenuPrincipal {
     public ControladorMenuPrincipal(MenuPrincipal ventanaMenu) {
         this.controladorVentanas = new ControladorMenuVentanas();
         this.ventanaMenu = new MenuPrincipal();
+        
         this.ventanaMenu.ingresarStockButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 //ingresarStockButtonMouseClicked(evt);
-                controladorVentanas.controladorIngresar.iniciarVentanaIngresar();
+                if(permisoUsuario.equals("Administrador")||permisoUsuario.equals("Empleado")){
+                    controladorVentanas.controladorIngresar.iniciarVentanaIngresar();
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
+                }
             }
         });
         this.ventanaMenu.verUsuariosButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //verUsuariosButtonMouseClicked(evt);
+                if(permisoUsuario.equals("Administrador")){
+                    controladorVentanas.controladorUsuarios.iniciarVentanaVerUsuarios();
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
+                }
             }
         });
         this.ventanaMenu.registrarProductoButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //registrarProductoButtonMouseClicked(evt);
-                controladorVentanas.controladorRegistrar.iniciarVentanaRegistrar();
+                if(permisoUsuario.equals("Administrador")){
+                    controladorVentanas.controladorRegistrar.iniciarVentanaRegistrar();
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
+                }
             }
         });
         this.ventanaMenu.registroButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //registroButtonMouseClicked(evt);
+                controladorVentanas.controladorRegistros.iniciarVentanasRegistros();
             }
         });
         this.ventanaMenu.retirarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 //retirarButtonMouseClicked(evt);
-                controladorVentanas.controladorRetirar.iniciarVentanaRetirar();
+                if(permisoUsuario.equals("Administrador")||permisoUsuario.equals("Empleado")){
+                    controladorVentanas.controladorRetirar.iniciarVentanaRetirar();
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
+                }
             }
         });
         this.ventanaMenu.salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,7 +93,11 @@ public class ControladorMenuPrincipal {
         this.ventanaMenu.eliminarPButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //eliminarPButtonMouseClicked(evt);
+                if(permisoUsuario.equals("Administrador")){
+                    //falta implementar
+                }else{
+                    javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
+                }
             }
         });
         this.ventanaMenu.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,6 +107,7 @@ public class ControladorMenuPrincipal {
             }
         });
     }
+    
     
     
     public void IniciarVentanaMenu(){
@@ -104,6 +125,7 @@ public class ControladorMenuPrincipal {
     }
     
     //Se lista los productos
+    @Override
     public List listar(){
         List<Producto> listaProductos = new ArrayList<>();
         String sql = "SELECT * FROM producto";
@@ -139,6 +161,16 @@ public class ControladorMenuPrincipal {
             modeloTablaProducto.addRow(ob);
         }
         ventanaMenu.productosJTable.setModel(modeloTablaProducto);
+    }
+
+    @Override
+    public void crear() {
+        //No usado
+    }
+
+    @Override
+    public void eliminar() {
+        //No usado
     }
     
     
