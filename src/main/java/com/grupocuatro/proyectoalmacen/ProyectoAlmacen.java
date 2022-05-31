@@ -19,6 +19,11 @@ import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Registrar;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistrarProducto;
 import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorRegistroProducto;
 
+import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroIngresoSalida;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControrladorRegistroIngresoSalida;
+
+import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.VerUsuarios;
+import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorVerUsuarios;
 
 import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
@@ -46,6 +51,13 @@ public class ProyectoAlmacen {
         ControladorRegistroProducto  test4 = new ControladorRegistroProducto(registroPrueba,ventanaRegistro);
         //test4.iniciarVentanaRegistrar();
         //----------------------------------------------------------------------------------------
+        RegistroIngresoSalida ventanaRegistros = new RegistroIngresoSalida();
+        ControrladorRegistroIngresoSalida controladorRegistros = new ControrladorRegistroIngresoSalida(ventanaRegistros);
+        //controladorRegistros.iniciarVentanasRegistros();
+        //----------------------------------------------------------------------------------------------------------------
+        VerUsuarios ventanaVerUusarios = new VerUsuarios();
+        ControladorVerUsuarios test5 = new ControladorVerUsuarios(ventanaVerUusarios);
+        //test5.iniciarVentanaVerUsuarios();
         //----------------------------------------------------------------------------------------------------------------
         LogicaModeloVista testuwu = new LogicaModeloVista();
         testuwu.app();

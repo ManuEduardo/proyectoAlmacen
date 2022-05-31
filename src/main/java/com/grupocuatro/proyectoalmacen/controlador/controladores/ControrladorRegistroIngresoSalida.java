@@ -10,8 +10,16 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.RegistroIngresoSalida;
  * @author manue
  */
 public class ControrladorRegistroIngresoSalida {
+    private RegistroIngresoSalida ventanaRegistros;
+
+    public ControrladorRegistroIngresoSalida(RegistroIngresoSalida ventanaRegistros) {
+        this.ventanaRegistros = new RegistroIngresoSalida();
+    }
+    
+    
     
     public void iniciarVentanasRegistros(){
-        
+        ventanaRegistros.setVisible(true);
+        ventanaRegistros.setTitle("Registros de Actividad Almacen");
     }
 }

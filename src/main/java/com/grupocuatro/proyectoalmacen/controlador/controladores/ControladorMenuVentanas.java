@@ -6,11 +6,13 @@ package com.grupocuatro.proyectoalmacen.controlador.controladores;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.*;
 import com.grupocuatro.proyectoalmacen.modelo.producto.Producto;
 import com.grupocuatro.proyectoalmacen.vista.ventanas.*;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.VerUsuarios;
 
 /**
  *
  * @author manue
  */
+//ESTA CLASE SOLO ES PARA FACILITAR EL USO DE LOS BOTONES
 public class ControladorMenuVentanas {
     //faltar agregar mas ventanas
     private Ingresar modeloIngresar = new Ingresar();
@@ -26,7 +28,11 @@ public class ControladorMenuVentanas {
     private RegistrarProducto ventanaRegistrar = new RegistrarProducto();
     public ControladorRegistroProducto  controladorRegistrar;
     
+    private RegistroIngresoSalida ventanaRegistros = new RegistroIngresoSalida();
     public ControrladorRegistroIngresoSalida controladorRegistros;
+    
+    private VerUsuarios ventanaUsuarios = new VerUsuarios();
+    public ControladorVerUsuarios controladorVerUsuarios;
     
     public ControladorVerUsuarios controladorUsuarios;
 
@@ -34,8 +40,8 @@ public class ControladorMenuVentanas {
         this.controladorIngresar = new ControladorIngresarStock(modeloIngresar,ventanaIngresar);
         this.controladorRegistrar = new ControladorRegistroProducto(modeloRegistrar,ventanaRegistrar);
         this.controladorRetirar = new ControladorRetirarStock(modeloRetirar,ventanaRetirar);
-        this.controladorRegistros = new ControrladorRegistroIngresoSalida();
-        this.controladorUsuarios = new ControladorVerUsuarios();
+        this.controladorRegistros = new ControrladorRegistroIngresoSalida(ventanaRegistros);
+        this.controladorUsuarios = new ControladorVerUsuarios(ventanaUsuarios);
     }
     
     

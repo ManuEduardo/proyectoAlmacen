@@ -10,9 +10,16 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.VerUsuarios;
  * @author manue
  */
 public class ControladorVerUsuarios {
+    private VerUsuarios ventanaUsuarios;
+
+    public ControladorVerUsuarios(VerUsuarios ventanaUsuarios) {
+        this.ventanaUsuarios = ventanaUsuarios;
+    }
+    
     
     public void iniciarVentanaVerUsuarios(){
-        
+        ventanaUsuarios.setVisible(true);
+        ventanaUsuarios.setTitle("Registros de Actividad Almacen");
     }
     
 }

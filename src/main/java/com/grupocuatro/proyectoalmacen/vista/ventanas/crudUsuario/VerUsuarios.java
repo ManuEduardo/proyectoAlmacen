@@ -26,21 +26,95 @@ public class VerUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        fondoJPanel = new javax.swing.JPanel();
+        tituloJLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        usuariosJTable = new javax.swing.JTable();
+        crearButton = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(900, 500));
+        setResizable(false);
+        setSize(new java.awt.Dimension(900, 700));
+
+        fondoJPanel.setBackground(new java.awt.Color(246, 79, 68));
+        fondoJPanel.setPreferredSize(new java.awt.Dimension(900, 500));
+        fondoJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tituloJLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 50)); // NOI18N
+        tituloJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tituloJLabel.setText("USUARIOS");
+        fondoJPanel.add(tituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
+
+        usuariosJTable.setBackground(new java.awt.Color(242, 242, 242));
+        usuariosJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        usuariosJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "NOMBRE", "TIPO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        usuariosJTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        usuariosJTable.setRowHeight(30);
+        usuariosJTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        usuariosJTable.setSelectionForeground(new java.awt.Color(255, 204, 153));
+        usuariosJTable.setShowGrid(true);
+        jScrollPane1.setViewportView(usuariosJTable);
+
+        fondoJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 880, 420));
+
+        crearButton.setBackground(new java.awt.Color(158, 191, 36));
+        crearButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        crearButton.setForeground(new java.awt.Color(255, 255, 255));
+        crearButton.setText("CREAR USUARIO");
+        crearButton.setBorder(null);
+        crearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        crearButton.setFocusable(false);
+        crearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearButtonMouseClicked(evt);
+            }
+        });
+        fondoJPanel.add(crearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 160, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void crearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearButtonMouseClicked
+
+    }//GEN-LAST:event_crearButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +152,10 @@ public class VerUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton crearButton;
+    private javax.swing.JPanel fondoJPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel tituloJLabel;
+    public javax.swing.JTable usuariosJTable;
     // End of variables declaration//GEN-END:variables
 }

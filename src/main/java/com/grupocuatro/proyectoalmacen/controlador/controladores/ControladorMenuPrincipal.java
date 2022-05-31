@@ -20,10 +20,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author manue
  */
-public class ControladorMenuPrincipal implements CRUD{
+public abstract class ControladorMenuPrincipal implements CRUD{
     private ControladorMenuVentanas controladorVentanas;
     private final MenuPrincipal ventanaMenu;
     private DefaultTableModel modeloTablaProducto = new DefaultTableModel();
+    
 
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
@@ -32,10 +33,23 @@ public class ControladorMenuPrincipal implements CRUD{
     
     private String permisoUsuario;
 
+    
+    //meotod abstracto para volver al login
+    public abstract void salirbuttonMouseClicked();
+
+    
     public ControladorMenuPrincipal(MenuPrincipal ventanaMenu) {
+        
         this.controladorVentanas = new ControladorMenuVentanas();
         this.ventanaMenu = new MenuPrincipal();
         
+        this.ventanaMenu.salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //meotod abstracto para volver al login
+                salirbuttonMouseClicked();
+            }
+        });
         this.ventanaMenu.ingresarStockButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,12 +98,6 @@ public class ControladorMenuPrincipal implements CRUD{
                 }
             }
         });
-        this.ventanaMenu.salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //salirbuttonMouseClicked(evt);
-            }
-        });
         this.ventanaMenu.eliminarPButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,25 +111,49 @@ public class ControladorMenuPrincipal implements CRUD{
         this.ventanaMenu.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //actualizarButtonMouseClicked(evt);
+                modeloTablaProducto.setRowCount(0);
+                ventanaMenu.productosJTable.setModel(modeloTablaProducto);
+                javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"Se ha actualizado");
+                listarProductos();
             }
         });
     }
     
-    
+    //METODOS Y FUNCIONES DE LA CLASE
     
     public void IniciarVentanaMenu(){
         listarProductos();
         permisoUsuario = ventanaMenu.tipoLabel.getText();
         ventanaMenu.setVisible(true);
         ventanaMenu.setTitle("Menu Principal");
-        System.out.println("Prueba "+permisoUsuario);
     }
     
+    public void cerrarVentana(){
+        modeloTablaProducto.setRowCount(0);
+        ventanaMenu.setVisible(false);
+        ventanaMenu.dispose();
+    }
     
     public void datosLoggeo(String nombre,String tipo){
         ventanaMenu.nombreLabel.setText(nombre);
         ventanaMenu.tipoLabel.setText(tipo);
+    }
+    
+    
+    public void listarProductos(){
+        List<Producto> listaProduc = listar();
+        modeloTablaProducto = (DefaultTableModel)ventanaMenu.productosJTable.getModel();
+        Object[] ob = new Object[5];
+        for (int i = 0; i < listaProduc.size(); i++) {
+            ob[0] = listaProduc.get(i).getIdProducto();
+            ob[1] = listaProduc.get(i).getNombreProducto();
+            ob[2] = listaProduc.get(i).getDescripcionProducto();
+            ob[3] = listaProduc.get(i).getPrecioProducto();
+            ob[4] = listaProduc.get(i).getCantidadProducto();
+            modeloTablaProducto.addRow(ob);
+            
+        }
+        ventanaMenu.productosJTable.setModel(modeloTablaProducto);
     }
     
     //Se lista los productos
@@ -129,6 +161,7 @@ public class ControladorMenuPrincipal implements CRUD{
     public List listar(){
         List<Producto> listaProductos = new ArrayList<>();
         String sql = "SELECT * FROM producto";
+        //String sql = "SELECT p.id, p.nombre, p.descripcion, p.precio, a.cantidad FROM producto p left join almacen a on p.id = a.id-producto";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);
@@ -146,21 +179,6 @@ public class ControladorMenuPrincipal implements CRUD{
             System.out.println("Error :"+e);
         }
         return listaProductos;
-    }
-    
-    public void listarProductos(){
-        List<Producto> listaProduc = listar();
-        modeloTablaProducto = (DefaultTableModel)ventanaMenu.productosJTable.getModel();
-        Object[] ob = new Object[5];
-        for (int i = 0; i < listaProduc.size(); i++) {
-            ob[0] = listaProduc.get(i).getIdProducto();
-            ob[1] = listaProduc.get(i).getNombreProducto();
-            ob[2] = listaProduc.get(i).getDescripcionProducto();
-            ob[3] = listaProduc.get(i).getPrecioProducto();
-            ob[4] = listaProduc.get(i).getCantidadProducto();
-            modeloTablaProducto.addRow(ob);
-        }
-        ventanaMenu.productosJTable.setModel(modeloTablaProducto);
     }
 
     @Override

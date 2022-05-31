@@ -26,17 +26,71 @@ public class RegistroIngresoSalida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        fondoJPanel = new javax.swing.JPanel();
+        tituloJLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        registrosJTable = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        setSize(new java.awt.Dimension(900, 500));
+
+        fondoJPanel.setBackground(new java.awt.Color(246, 79, 68));
+        fondoJPanel.setPreferredSize(new java.awt.Dimension(900, 500));
+        fondoJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tituloJLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 50)); // NOI18N
+        tituloJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tituloJLabel.setText("REGISTROS DE ACTIVIDAD");
+        fondoJPanel.add(tituloJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, -1));
+
+        registrosJTable.setBackground(new java.awt.Color(242, 242, 242));
+        registrosJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        registrosJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "RESPONSABLE", "PRODUCTO", "DESCRIPCION", "CANTIDAD", "FECHA"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        registrosJTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        registrosJTable.setRowHeight(30);
+        registrosJTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        registrosJTable.setSelectionForeground(new java.awt.Color(255, 204, 153));
+        registrosJTable.setShowGrid(true);
+        jScrollPane1.setViewportView(registrosJTable);
+
+        fondoJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 880, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fondoJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +132,9 @@ public class RegistroIngresoSalida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel fondoJPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable registrosJTable;
+    private javax.swing.JLabel tituloJLabel;
     // End of variables declaration//GEN-END:variables
 }

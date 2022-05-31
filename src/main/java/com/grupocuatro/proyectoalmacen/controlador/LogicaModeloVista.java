@@ -16,12 +16,19 @@ import com.grupocuatro.proyectoalmacen.vista.MenuPrincipal;
  */
 public class LogicaModeloVista {
     MenuPrincipal ventanaPrincipal = new MenuPrincipal();
-    ControladorMenuPrincipal controladorMenu = new ControladorMenuPrincipal(ventanaPrincipal);
+    ControladorMenuPrincipal controladorMenu = new ControladorMenuPrincipal(ventanaPrincipal) {
+        @Override
+        public void salirbuttonMouseClicked() {
+            login.IniciarVentanaLogin();
+            controladorMenu.cerrarVentana();
+        }
+    };
     
     VentanaLogin ventanaLogin = new VentanaLogin();
     Login modeloLogin = new Login();
     String tipoUsuario;
     String nombreUsuario;
+    
     
     
     ControladorLogin login = new ControladorLogin(modeloLogin,ventanaLogin) {
@@ -32,6 +39,7 @@ public class LogicaModeloVista {
             controladorMenu.datosLoggeo(nombreUsuario, tipoUsuario);
             controladorMenu.IniciarVentanaMenu();
             ventanaLogin.setVisible(false);
+            ventanaLogin.dispose();
         }};
     
     public void app(){
