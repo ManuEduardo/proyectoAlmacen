@@ -52,7 +52,6 @@ public class RetirarStock extends javax.swing.JFrame {
 
         productosCombo.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         productosCombo.setMaximumRowCount(100);
-        productosCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         productosCombo.setBorder(null);
         productosCombo.setFocusable(false);
         productosCombo.setPreferredSize(new java.awt.Dimension(290, 30));

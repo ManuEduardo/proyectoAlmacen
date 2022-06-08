@@ -42,6 +42,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         
         this.controladorVentanas = new ControladorMenuVentanas();
         this.ventanaMenu = new MenuPrincipal();
+        listarProductos();
         
         this.ventanaMenu.salirbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
@@ -122,14 +123,12 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     //METODOS Y FUNCIONES DE LA CLASE
     
     public void IniciarVentanaMenu(){
-        listarProductos();
         permisoUsuario = ventanaMenu.tipoLabel.getText();
         ventanaMenu.setVisible(true);
         ventanaMenu.setTitle("Menu Principal");
     }
     
     public void cerrarVentana(){
-        modeloTablaProducto.setRowCount(0);
         ventanaMenu.setVisible(false);
         ventanaMenu.dispose();
     }
@@ -140,7 +139,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     }
     
     
-    public void listarProductos(){
+    public final void listarProductos(){
         List<Producto> listaProduc = listar();
         modeloTablaProducto = (DefaultTableModel)ventanaMenu.productosJTable.getModel();
         Object[] ob = new Object[5];
@@ -160,8 +159,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     @Override
     public List listar(){
         List<Producto> listaProductos = new ArrayList<>();
-        String sql = "SELECT * FROM producto";
-        //String sql = "SELECT p.id, p.nombre, p.descripcion, p.precio, a.cantidad FROM producto p left join almacen a on p.id = a.id-producto";
+        String sql = "SELECT p.id, p.nombre, p.descripcion, p.precio, (select sum(cantidad) from almacen where id_producto = p.id) as cantidad FROM producto p";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);

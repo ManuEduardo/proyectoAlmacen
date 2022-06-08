@@ -14,7 +14,7 @@ public class Producto {
     private String nombreProducto;
     private String descripcionProducto;
     private float precioProducto;
-    private int cantidadProducto;
+    private int cantidadProducto = 0;
 
     public int getIdProducto() {
         return idProducto;
