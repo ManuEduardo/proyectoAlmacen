@@ -98,7 +98,7 @@
                     <Column editable="false" title="ID" type="java.lang.Integer"/>
                     <Column editable="false" title="RESPONSABLE" type="java.lang.String"/>
                     <Column editable="false" title="PRODUCTO" type="java.lang.String"/>
-                    <Column editable="false" title="DESCRIPCION" type="java.lang.String"/>
+                    <Column editable="false" title="OPERACI&#xd3;N" type="java.lang.String"/>
                     <Column editable="false" title="CANTIDAD" type="java.lang.Integer"/>
                     <Column editable="false" title="FECHA" type="java.lang.String"/>
                   </Table>

@@ -28,7 +28,7 @@ public class ControladorMenuVentanas {
     private RegistrarProducto ventanaRegistrar = new RegistrarProducto();
     public ControladorRegistroProducto  controladorRegistrar;
     
-    private RegistroIngresoSalida ventanaRegistros = new RegistroIngresoSalida();
+    private Registros ventanaRegistros = new Registros();
     public ControrladorRegistroIngresoSalida controladorRegistros;
     
     private VerUsuarios ventanaUsuarios = new VerUsuarios();

@@ -8,12 +8,12 @@ package com.grupocuatro.proyectoalmacen.vista.ventanas;
  *
  * @author manue
  */
-public class RegistroIngresoSalida extends javax.swing.JFrame {
+public class Registros extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistroIngresoSalida
      */
-    public RegistroIngresoSalida() {
+    public Registros() {
         initComponents();
     }
 
@@ -51,7 +51,7 @@ public class RegistroIngresoSalida extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "RESPONSABLE", "PRODUCTO", "DESCRIPCION", "CANTIDAD", "FECHA"
+                "ID", "RESPONSABLE", "PRODUCTO", "OPERACIÓN", "CANTIDAD", "FECHA"
             }
         ) {
             Class[] types = new Class [] {
@@ -113,20 +113,21 @@ public class RegistroIngresoSalida extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroIngresoSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroIngresoSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroIngresoSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroIngresoSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Registros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroIngresoSalida().setVisible(true);
+                new Registros().setVisible(true);
             }
         });
     }

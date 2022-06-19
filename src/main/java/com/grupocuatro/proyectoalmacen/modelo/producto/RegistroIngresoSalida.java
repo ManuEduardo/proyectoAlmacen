@@ -13,6 +13,7 @@ public class RegistroIngresoSalida {
     private String usuario;
     private String producto;
     private String operacion;
+    private int cantidad;
     private String fecha;
 
     public int getId() {
@@ -45,6 +46,14 @@ public class RegistroIngresoSalida {
 
     public void setOperacion(String operacion) {
         this.operacion = operacion;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getFecha() {
