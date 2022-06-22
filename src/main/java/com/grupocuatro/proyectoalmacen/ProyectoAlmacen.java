@@ -9,10 +9,11 @@ import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
-        System.out.println("Testeo de clases y metodos");
+        System.out.println("EL PROFE ES EL MEJOR");
+        //no nos jale profe
         //----------------------------------------------------------------------------------------------------------------
-        LogicaModeloVista testuwu = new LogicaModeloVista();
-        testuwu.app();
+        LogicaModeloVista test = new LogicaModeloVista();
+        test.app();
 
     }
 }
