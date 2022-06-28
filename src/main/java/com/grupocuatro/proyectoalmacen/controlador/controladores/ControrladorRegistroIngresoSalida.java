@@ -70,7 +70,7 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
                 registro.setId(resultado.getInt(1));
                 registro.setUsuario(resultado.getString(2));
                 registro.setProducto(resultado.getString(3));
-                registro.setOperacion(resultado.getString(4));
+                registro.setOperacion((resultado.getString(4)).replace(" ",""));
                 registro.setCantidad(resultado.getInt(5));
                 registro.setFecha(resultado.getString(6));
                 

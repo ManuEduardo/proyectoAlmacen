@@ -94,7 +94,7 @@ public abstract class ControladorLogin{
         }
         
         //Establecer conexion;
-        String sql = "Select * from Usuario";
+        String sql = "Select id,nombre,contrasena,(select tipo from tipoUsuario where id_tipo=id) as tipo from Usuario";
         try{
             acceso = conexionLogin.Conectar();//se conecta
             preState = acceso.prepareStatement(sql);//la coneccion se le carga la consulta
@@ -103,7 +103,7 @@ public abstract class ControladorLogin{
                 if(resultado.getString(2).equals(usuarioIngresado)&&resultado.getString(3).equals(contrasenaIngresada)){
                     modeloLogin.establecerDatos(usuarioIngresado, contrasenaIngresada);
                     //Se establecen datos para el uso de funciones en el menu principal
-                    setTipoUsuario(resultado.getString(4));
+                    setTipoUsuario((resultado.getString(4)).replace(" ",""));
                     setNombreUsuario(resultado.getString(2));
                     return true;
                 }

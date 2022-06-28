@@ -33,5 +33,7 @@ public class ControladorRegistroProducto implements ActionListener{
         modeloRegistro.establecerDatos((String)ventanaRegistro.nombreField.getText(), ventanaRegistro.descripcionTextArea.getText(), (float)ventanaRegistro.precioSpinner.getValue(), (int)ventanaRegistro.cantidadSpinner1.getValue());
         javax.swing.JOptionPane.showMessageDialog(ventanaRegistro,"Registro de datos: \n Nombre: "+modeloRegistro.productoRegistrado.getNombreProducto()+"\ndescripcion: "+ modeloRegistro.productoRegistrado.getDescripcionProducto()+"\nprecio: "+modeloRegistro.productoRegistrado.getPrecioProducto()+"\ncantidad: "+modeloRegistro.productoRegistrado.getCantidadProducto()+"\nfecha actual: "+modeloRegistro.getFechaHoy());
     }
-    
+    public void registrarProducto(){
+        System.out.println("En proceso...");
+    }
 }
