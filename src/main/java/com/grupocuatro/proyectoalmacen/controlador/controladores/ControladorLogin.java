@@ -25,6 +25,7 @@ public abstract class ControladorLogin{
     private ResultSet resultado;
     private String TipoUsuario = null; 
     private String NombreUsuario = null;
+    private int IdUsuario = 0;
 
     public String getNombreUsuario() {
         return NombreUsuario;
@@ -40,6 +41,14 @@ public abstract class ControladorLogin{
 
     public void setTipoUsuario(String TipoUsuario) {
         this.TipoUsuario = TipoUsuario;
+    }
+
+    public int getIdUsuario() {
+        return IdUsuario;
+    }
+
+    public void setIdUsuario(int IdUsuario) {
+        this.IdUsuario = IdUsuario;
     }
     
     
@@ -77,6 +86,7 @@ public abstract class ControladorLogin{
         }else{
             setTipoUsuario(null);
             setNombreUsuario(null);
+            setIdUsuario(0);
         }
     }
     
@@ -105,6 +115,7 @@ public abstract class ControladorLogin{
                     //Se establecen datos para el uso de funciones en el menu principal
                     setTipoUsuario((resultado.getString(4)).replace(" ",""));
                     setNombreUsuario(resultado.getString(2));
+                    setIdUsuario(resultado.getInt(1));
                     return true;
                 }
             }

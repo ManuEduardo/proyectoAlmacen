@@ -5,11 +5,13 @@
 
 package com.grupocuatro.proyectoalmacen;
 
+
+
 import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
-        System.out.println("EL PROFE ES EL MEJOR");
+        
         //no nos jale profe
         //----------------------------------------------------------------------------------------------------------------
         LogicaModeloVista test = new LogicaModeloVista();

@@ -32,6 +32,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     private ResultSet resultado;
     
     private String permisoUsuario;
+    public int idUsuario;
 
     
     //meotod abstracto para volver al login
@@ -41,6 +42,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     public ControladorMenuPrincipal(MenuPrincipal ventanaMenu) {
         
         this.controladorVentanas = new ControladorMenuVentanas();
+        
         this.ventanaMenu = new MenuPrincipal();
         listarProductos();
         
@@ -126,6 +128,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         permisoUsuario = ventanaMenu.tipoLabel.getText();
         ventanaMenu.setVisible(true);
         ventanaMenu.setTitle("Menu Principal");
+        
     }
     
     public void cerrarVentana(){
@@ -133,9 +136,11 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         ventanaMenu.dispose();
     }
     
-    public void datosLoggeo(String nombre,String tipo){
+    public void datosLoggeo(String nombre,String tipo,int id){
         ventanaMenu.nombreLabel.setText(nombre);
         ventanaMenu.tipoLabel.setText(tipo);
+        idUsuario = id;
+        controladorVentanas.controladorRegistrar.setIdUsuario(idUsuario);
     }
     
     

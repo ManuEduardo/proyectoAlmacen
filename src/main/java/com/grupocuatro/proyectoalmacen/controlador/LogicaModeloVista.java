@@ -28,6 +28,7 @@ public class LogicaModeloVista {
     Login modeloLogin = new Login();
     String tipoUsuario;
     String nombreUsuario;
+    int idUsuario;
     
     
     
@@ -36,7 +37,8 @@ public class LogicaModeloVista {
         public void funcionalidadButtonLogin() {
             tipoUsuario = login.getTipoUsuario();
             nombreUsuario = login.getNombreUsuario();
-            controladorMenu.datosLoggeo(nombreUsuario, tipoUsuario);
+            idUsuario = login.getIdUsuario();
+            controladorMenu.datosLoggeo(nombreUsuario, tipoUsuario,idUsuario);
             controladorMenu.IniciarVentanaMenu();
             ventanaLogin.setVisible(false);
             ventanaLogin.dispose();

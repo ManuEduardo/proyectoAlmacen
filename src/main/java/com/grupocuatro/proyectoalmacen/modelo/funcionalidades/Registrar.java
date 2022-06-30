@@ -16,10 +16,16 @@ public class Registrar {
     protected SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/YYYY");
     protected String fechaHoy = fechaFormato.format(fecha);
     
+    private java.sql.Date sqlFecha = new java.sql.Date(fecha.getTime());
+    
     public final Producto productoRegistrado;
 
     public Registrar(Producto productoRegistrado) {
         this.productoRegistrado = productoRegistrado;
+    }
+
+    public java.sql.Date getSqlFecha() {
+        return sqlFecha;
     }
     
     public Date getFecha() {
@@ -30,10 +36,9 @@ public class Registrar {
         return fechaHoy;
     }
     
-    public void establecerDatos(String nombre,String descripcion,float precio,int cantidad){
+    public void establecerDatos(String nombre,String descripcion,float precio){
         productoRegistrado.setNombreProducto(nombre);
         productoRegistrado.setDescripcionProducto(descripcion);
         productoRegistrado.setPrecioProducto(precio);
-        productoRegistrado.setCantidadProducto(cantidad);
     }
 }

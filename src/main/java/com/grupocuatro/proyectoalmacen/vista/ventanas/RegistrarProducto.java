@@ -35,8 +35,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         registrabutton = new javax.swing.JButton();
         puntoLabel = new javax.swing.JLabel();
         precioSpinner = new javax.swing.JSpinner();
-        seleccionarCantidadLabel1 = new javax.swing.JLabel();
-        cantidadSpinner1 = new javax.swing.JSpinner();
         nombreField = new javax.swing.JTextField();
         nombreSeparator = new javax.swing.JSeparator();
         presioLabel = new javax.swing.JLabel();
@@ -84,7 +82,7 @@ public class RegistrarProducto extends javax.swing.JFrame {
                 registrabuttonActionPerformed(evt);
             }
         });
-        jPanel1.add(registrabutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 160, 40));
+        jPanel1.add(registrabutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 160, 40));
 
         puntoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         puntoLabel.setText("(.)");
@@ -98,19 +96,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         precioSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
         precioSpinner.setRequestFocusEnabled(false);
         jPanel1.add(precioSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 100, 30));
-
-        seleccionarCantidadLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        seleccionarCantidadLabel1.setText("Seleccione la cantidad");
-        jPanel1.add(seleccionarCantidadLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
-
-        cantidadSpinner1.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        cantidadSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 0, 10000, 1));
-        cantidadSpinner1.setBorder(null);
-        cantidadSpinner1.setFocusable(false);
-        cantidadSpinner1.setMinimumSize(new java.awt.Dimension(60, 30));
-        cantidadSpinner1.setPreferredSize(new java.awt.Dimension(60, 30));
-        cantidadSpinner1.setRequestFocusEnabled(false);
-        jPanel1.add(cantidadSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 60, 30));
 
         nombreField.setBackground(new java.awt.Color(242, 174, 48));
         nombreField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -270,7 +255,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JSpinner cantidadSpinner1;
     private javax.swing.JLabel descripcionLabel;
     public javax.swing.JScrollPane descripcionScrollPane;
     public javax.swing.JTextArea descripcionTextArea;
@@ -282,7 +266,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel presioLabel;
     private javax.swing.JLabel puntoLabel;
     public javax.swing.JButton registrabutton;
-    private javax.swing.JLabel seleccionarCantidadLabel1;
     private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }
