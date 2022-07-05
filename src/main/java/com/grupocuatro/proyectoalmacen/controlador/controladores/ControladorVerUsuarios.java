@@ -58,7 +58,7 @@ public class ControladorVerUsuarios implements CRUD{
     @Override
     public List listar() {
         List<Usuario> listaUsuario = new ArrayList<>();
-        String sql = "SELECT * from Usuario";
+        String sql = "SELECT id,nombre,contrasena,(select tipo from tipoUsuario where id_tipo = id) as tipo from Usuario";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);

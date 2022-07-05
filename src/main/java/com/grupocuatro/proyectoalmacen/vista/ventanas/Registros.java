@@ -30,13 +30,14 @@ public class Registros extends javax.swing.JFrame {
         tituloJLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         registrosJTable = new javax.swing.JTable();
+        actualizarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
-        setSize(new java.awt.Dimension(900, 500));
+        setSize(new java.awt.Dimension(900, 570));
 
         fondoJPanel.setBackground(new java.awt.Color(246, 79, 68));
-        fondoJPanel.setPreferredSize(new java.awt.Dimension(900, 500));
+        fondoJPanel.setPreferredSize(new java.awt.Dimension(900, 570));
         fondoJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tituloJLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 50)); // NOI18N
@@ -78,6 +79,25 @@ public class Registros extends javax.swing.JFrame {
 
         fondoJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 880, 420));
 
+        actualizarButton.setBackground(new java.awt.Color(158, 191, 36));
+        actualizarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        actualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarButton.setText("ACTUALIZAR");
+        actualizarButton.setBorder(null);
+        actualizarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actualizarButton.setFocusable(false);
+        actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarButtonMouseClicked(evt);
+            }
+        });
+        actualizarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarButtonActionPerformed(evt);
+            }
+        });
+        fondoJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 160, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,6 +115,14 @@ public class Registros extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actualizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonMouseClicked
+
+    private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +161,7 @@ public class Registros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton actualizarButton;
     private javax.swing.JPanel fondoJPanel;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable registrosJTable;

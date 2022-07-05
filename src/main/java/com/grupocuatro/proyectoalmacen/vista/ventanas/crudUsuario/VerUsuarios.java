@@ -31,6 +31,7 @@ public class VerUsuarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         usuariosJTable = new javax.swing.JTable();
         crearButton = new javax.swing.JButton();
+        actualizarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 500));
@@ -92,7 +93,26 @@ public class VerUsuarios extends javax.swing.JFrame {
                 crearButtonMouseClicked(evt);
             }
         });
-        fondoJPanel.add(crearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 160, 50));
+        fondoJPanel.add(crearButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 160, 50));
+
+        actualizarButton.setBackground(new java.awt.Color(158, 191, 36));
+        actualizarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        actualizarButton.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarButton.setText("ACTUALIZAR");
+        actualizarButton.setBorder(null);
+        actualizarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        actualizarButton.setFocusable(false);
+        actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarButtonMouseClicked(evt);
+            }
+        });
+        actualizarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarButtonActionPerformed(evt);
+            }
+        });
+        fondoJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 160, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +135,14 @@ public class VerUsuarios extends javax.swing.JFrame {
     private void crearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearButtonMouseClicked
 
     }//GEN-LAST:event_crearButtonMouseClicked
+
+    private void actualizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonMouseClicked
+
+    private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +180,7 @@ public class VerUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton actualizarButton;
     public javax.swing.JButton crearButton;
     private javax.swing.JPanel fondoJPanel;
     private javax.swing.JScrollPane jScrollPane1;

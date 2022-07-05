@@ -39,6 +39,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         contrasenaSeparator = new javax.swing.JSeparator();
         contrasenaField = new javax.swing.JPasswordField();
         entrarBoton = new javax.swing.JButton();
+        recuperarLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -120,6 +121,10 @@ public class VentanaLogin extends javax.swing.JFrame {
         entrarBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         entrarBoton.setFocusable(false);
 
+        recuperarLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        recuperarLabel.setForeground(new java.awt.Color(102, 102, 102));
+        recuperarLabel.setText("Recuperar Contraseña");
+
         javax.swing.GroupLayout fondoFormLoginLayout = new javax.swing.GroupLayout(fondoFormLogin);
         fondoFormLogin.setLayout(fondoFormLoginLayout);
         fondoFormLoginLayout.setHorizontalGroup(
@@ -129,28 +134,27 @@ public class VentanaLogin extends javax.swing.JFrame {
                 .addComponent(titleLabel)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoFormLoginLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(fondoFormLoginLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(recuperarLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(entrarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fondoFormLoginLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addComponent(loginLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fondoFormLoginLayout.createSequentialGroup()
                         .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondoFormLoginLayout.createSequentialGroup()
-                                .addComponent(loginLabel)
+                                .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(fondoFormLoginLayout.createSequentialGroup()
-                                .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(fondoFormLoginLayout.createSequentialGroup()
-                                        .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(contrasenaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(contrasenaSeparator, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                    .addComponent(usuarioSeparator)
-                                    .addComponent(usuarioField)
-                                    .addComponent(contrasenaField))))))
+                            .addComponent(contrasenaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(contrasenaSeparator, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                            .addComponent(usuarioSeparator)
+                            .addComponent(usuarioField)
+                            .addComponent(contrasenaField))))
                 .addGap(16, 16, 16))
         );
         fondoFormLoginLayout.setVerticalGroup(
@@ -177,7 +181,9 @@ public class VentanaLogin extends javax.swing.JFrame {
                         .addComponent(contrasenaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(contrasenaLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(entrarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(fondoFormLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(entrarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recuperarLabel))
                 .addGap(44, 44, 44))
         );
 
@@ -281,6 +287,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel fondoFormLogin;
     private javax.swing.JPanel fondoPanel;
     private javax.swing.JLabel loginLabel;
+    public javax.swing.JLabel recuperarLabel;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel userLabel;
     public javax.swing.JTextField usuarioField;

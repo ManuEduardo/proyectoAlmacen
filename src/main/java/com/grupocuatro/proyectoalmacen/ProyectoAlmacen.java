@@ -14,5 +14,6 @@ public class ProyectoAlmacen {
         //----------------------------------------------------------------------------------------------------------------
         LogicaModeloVista test = new LogicaModeloVista();
         test.app();
+        //BOTONES DE ACTUALIZAR REGISTRO Y USUARIOS
     }
 }
