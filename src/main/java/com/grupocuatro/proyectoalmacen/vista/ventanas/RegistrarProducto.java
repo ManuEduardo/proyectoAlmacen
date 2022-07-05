@@ -34,12 +34,12 @@ public class RegistrarProducto extends javax.swing.JFrame {
         nombreLabel = new javax.swing.JLabel();
         registrabutton = new javax.swing.JButton();
         puntoLabel = new javax.swing.JLabel();
-        precioSpinner = new javax.swing.JSpinner();
         nombreField = new javax.swing.JTextField();
         nombreSeparator = new javax.swing.JSeparator();
         presioLabel = new javax.swing.JLabel();
         descripcionScrollPane = new javax.swing.JScrollPane();
         descripcionTextArea = new javax.swing.JTextArea();
+        precioSpinner = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 157, 53));
@@ -87,15 +87,6 @@ public class RegistrarProducto extends javax.swing.JFrame {
         puntoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         puntoLabel.setText("(.)");
         jPanel1.add(puntoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
-
-        precioSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        precioSpinner.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(1.0f), Float.valueOf(1.0f), Float.valueOf(10000.0f), Float.valueOf(0.5f)));
-        precioSpinner.setBorder(null);
-        precioSpinner.setFocusable(false);
-        precioSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
-        precioSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
-        precioSpinner.setRequestFocusEnabled(false);
-        jPanel1.add(precioSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 100, 30));
 
         nombreField.setBackground(new java.awt.Color(242, 174, 48));
         nombreField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -153,6 +144,15 @@ public class RegistrarProducto extends javax.swing.JFrame {
         descripcionScrollPane.setViewportView(descripcionTextArea);
 
         jPanel1.add(descripcionScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 290, 100));
+
+        precioSpinner.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        precioSpinner.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(1.0f), Float.valueOf(1.0f), Float.valueOf(10000.0f), Float.valueOf(0.5f)));
+        precioSpinner.setBorder(null);
+        precioSpinner.setFocusable(false);
+        precioSpinner.setMinimumSize(new java.awt.Dimension(60, 30));
+        precioSpinner.setPreferredSize(new java.awt.Dimension(60, 30));
+        precioSpinner.setRequestFocusEnabled(false);
+        jPanel1.add(precioSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -9,11 +9,14 @@ package com.grupocuatro.proyectoalmacen;
 
 import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
-
+    public static final LogicaModeloVista test = new LogicaModeloVista();
     public static void main(String[] args) {
-        //----------------------------------------------------------------------------------------------------------------
-        LogicaModeloVista test = new LogicaModeloVista();
         test.app();
-        //BOTONES DE ACTUALIZAR REGISTRO Y USUARIOS
+            //Proximas funcionalidades
+        //-Retirar Stock
+        //-Crear Usuarios
+        //-Eliminar Producto
+        //-Recuperar Contraseña
+            //Crear ventanas para recuperar contraseñas
     }
 }

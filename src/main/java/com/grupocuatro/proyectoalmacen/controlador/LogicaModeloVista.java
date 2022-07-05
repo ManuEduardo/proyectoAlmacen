@@ -29,9 +29,8 @@ public class LogicaModeloVista {
     String tipoUsuario;
     String nombreUsuario;
     int idUsuario;
-    
-    
-    
+
+
     ControladorLogin login = new ControladorLogin(modeloLogin,ventanaLogin) {
         @Override
         public void funcionalidadButtonLogin() {
