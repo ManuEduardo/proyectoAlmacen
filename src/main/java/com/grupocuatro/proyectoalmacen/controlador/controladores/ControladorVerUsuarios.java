@@ -4,7 +4,11 @@
  */
 package com.grupocuatro.proyectoalmacen.controlador.controladores;
 import com.grupocuatro.proyectoalmacen.controlador.Conexion;
+
 import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.VerUsuarios;
+import com.grupocuatro.proyectoalmacen.modelo.usuario.Usuario;
+
+import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.CrearUsuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 //Librerias para listar los usuarios en la ventana
-import com.grupocuatro.proyectoalmacen.modelo.usuario.Usuario;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +27,11 @@ import javax.swing.table.DefaultTableModel;
 public class ControladorVerUsuarios implements CRUD{
     private VerUsuarios ventanaUsuarios;
     private DefaultTableModel modeloTablaUsuario = new DefaultTableModel();
+    private Usuario user;
+
+    private final CrearUsuario ventanaCrearUsuario = new CrearUsuario();
+    private final Usuario usuarioCreado = new Usuario();
+    private final ControladorCrearUsuario controladorCrearUsuario;
     
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
@@ -33,6 +41,22 @@ public class ControladorVerUsuarios implements CRUD{
     public ControladorVerUsuarios(VerUsuarios ventanaUsuarios) {
         this.ventanaUsuarios = ventanaUsuarios;
         listarUsuarios();
+        this.controladorCrearUsuario = new ControladorCrearUsuario(usuarioCreado,ventanaCrearUsuario);
+        this.ventanaUsuarios.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modeloTablaUsuario.setRowCount(0);
+                ventanaUsuarios.usuariosJTable.setModel(modeloTablaUsuario);
+                javax.swing.JOptionPane.showMessageDialog(ventanaUsuarios,"Se ha actualizado");
+                listarUsuarios();
+            }
+        });
+        this.ventanaUsuarios.crearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                controladorCrearUsuario.iniciarVentanaCrear();
+            }
+        });
     }
     
     
@@ -64,7 +88,7 @@ public class ControladorVerUsuarios implements CRUD{
             preState = acceso.prepareStatement(sql);
             resultado = preState.executeQuery();
             while(resultado.next()){
-                Usuario user = new Usuario();
+                user = new Usuario();
                 user.setId(resultado.getInt(1));
                 user.setUsuario(resultado.getString(2));
                 user.setContrasena(resultado.getString(3));

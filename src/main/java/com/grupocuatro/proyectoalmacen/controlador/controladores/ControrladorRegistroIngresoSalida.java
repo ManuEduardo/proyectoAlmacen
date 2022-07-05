@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
 public class ControrladorRegistroIngresoSalida implements CRUD{
     private Registros ventanaRegistros;
     private DefaultTableModel modeloTablaRegistros = new DefaultTableModel();
+    RegistroIngresoSalida registro;
 
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
@@ -32,6 +33,15 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
     public ControrladorRegistroIngresoSalida(Registros ventanaRegistros) {
         this.ventanaRegistros = new Registros();
         listarRegistros();
+        this.ventanaRegistros.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modeloTablaRegistros.setRowCount(0);
+                ventanaRegistros.registrosJTable.setModel(modeloTablaRegistros);
+                javax.swing.JOptionPane.showMessageDialog(ventanaRegistros,"Se ha actualizado");
+                listarRegistros();
+            }
+        });
     }
     
     public void iniciarVentanasRegistros(){
@@ -66,7 +76,7 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
             preState = acceso.prepareStatement(sql);
             resultado = preState.executeQuery();
             while(resultado.next()){
-                RegistroIngresoSalida registro = new RegistroIngresoSalida();
+                registro = new RegistroIngresoSalida();
                 registro.setId(resultado.getInt(1));
                 registro.setUsuario(resultado.getString(2));
                 registro.setProducto(resultado.getString(3));

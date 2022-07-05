@@ -96,7 +96,7 @@ public class Registros extends javax.swing.JFrame {
                 actualizarButtonActionPerformed(evt);
             }
         });
-        fondoJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 160, 50));
+        fondoJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 160, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
