@@ -82,7 +82,8 @@ public abstract class ControladorLogin{
         
         if (validadorDeDatos(usuarioIngresado,contrasenaIngresada)){
             funcionalidadButtonLogin();//boton usado en el controlador principal
-            //javax.swing.JOptionPane.showMessageDialog(ventanaLogin,"Ingreso de datos: \n Usuario: "+modeloLogin.getUsuario()+"\n Contraseña: "+modeloLogin.getContrasena());
+            //vaciarCampos();   NO OLVIDAR QUITAR EL COMENTARIO
+            
         }else{
             setTipoUsuario(null);
             setNombreUsuario(null);
@@ -90,7 +91,10 @@ public abstract class ControladorLogin{
         }
     }
     
-        
+    public void vaciarCampos(){
+        ventanaLogin.usuarioField.setText("Ingrese su usuario");
+        ventanaLogin.contrasenaField.setText("contrasena");
+    }
     
     //Funcion para validar datos
     public boolean validadorDeDatos(String usuarioIngresado,String contrasenaIngresada){

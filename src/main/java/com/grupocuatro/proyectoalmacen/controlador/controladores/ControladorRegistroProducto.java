@@ -56,6 +56,10 @@ public class ControladorRegistroProducto implements ActionListener, CRUD{
     @Override
     public void actionPerformed(ActionEvent e) {
         modeloRegistro.establecerDatos((String)ventanaRegistro.nombreField.getText(), ventanaRegistro.descripcionTextArea.getText(), (float)ventanaRegistro.precioSpinner.getValue());
+        if (modeloRegistro.productoRegistrado.getNombreProducto().equals("Nombre del Producto") ||modeloRegistro.productoRegistrado.getNombreProducto().equalsIgnoreCase("")){
+            javax.swing.JOptionPane.showMessageDialog(ventanaRegistro,"No puede dejar el nombre en blanco");
+            return;
+        }
         registrarProducto(modeloRegistro.productoRegistrado);
         
     }
@@ -63,7 +67,13 @@ public class ControladorRegistroProducto implements ActionListener, CRUD{
         crear();
         ventanaRegistro.setVisible(false);
         javax.swing.JOptionPane.showMessageDialog(ventanaRegistro,"Se a registrado los datos: \n Nombre: "+objeto.getNombreProducto()+"\ndescripcion: "+ objeto.getDescripcionProducto()+"\nprecio: "+objeto.getPrecioProducto()+"\ncantidad: "+objeto.getCantidadProducto()+"\nfecha actual: "+modeloRegistro.getFechaHoy()+"\nId usuario: "+idUsuario);
+        vaciarCampos();
         ventanaRegistro.dispose();
+    }
+    
+    public void vaciarCampos(){
+        ventanaRegistro.nombreField.setText("Nombre del Producto");
+        ventanaRegistro.descripcionTextArea.setText("Descripcion");
     }
     
     @Override

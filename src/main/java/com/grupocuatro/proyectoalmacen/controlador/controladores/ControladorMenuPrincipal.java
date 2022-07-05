@@ -136,11 +136,17 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         ventanaMenu.dispose();
     }
     
+    //meotod que se llama en LogicaModeloVista
     public void datosLoggeo(String nombre,String tipo,int id){
         ventanaMenu.nombreLabel.setText(nombre);
         ventanaMenu.tipoLabel.setText(tipo);
         idUsuario = id;
+        establecerIdUsuarioVentanas(idUsuario);
+    }
+    
+    public void establecerIdUsuarioVentanas(int idUsuario){
         controladorVentanas.controladorRegistrar.setIdUsuario(idUsuario);
+        controladorVentanas.controladorIngresar.setIdUsuario(idUsuario);
     }
     
     

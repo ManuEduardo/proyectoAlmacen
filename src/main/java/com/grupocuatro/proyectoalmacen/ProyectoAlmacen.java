@@ -11,11 +11,8 @@ import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
 
     public static void main(String[] args) {
-        
-        //no nos jale profe
         //----------------------------------------------------------------------------------------------------------------
         LogicaModeloVista test = new LogicaModeloVista();
         test.app();
-
     }
 }

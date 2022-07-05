@@ -14,7 +14,6 @@ import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.VerUsuarios;
  */
 //ESTA CLASE SOLO ES PARA FACILITAR EL USO DE LOS BOTONES
 public class ControladorMenuVentanas {
-    private int idUsuario;
 
  
     //faltar agregar mas ventanas
@@ -40,7 +39,6 @@ public class ControladorMenuVentanas {
     public ControladorVerUsuarios controladorUsuarios;
 
     public ControladorMenuVentanas() {
-        System.out.println("prueba: "+idUsuario);
         this.controladorIngresar = new ControladorIngresarStock(modeloIngresar,ventanaIngresar);
         this.controladorRegistrar = new ControladorRegistroProducto(modeloRegistrar,ventanaRegistrar);
         this.controladorRetirar = new ControladorRetirarStock(modeloRetirar,ventanaRetirar);

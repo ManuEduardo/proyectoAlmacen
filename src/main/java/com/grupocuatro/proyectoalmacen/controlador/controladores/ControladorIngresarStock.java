@@ -24,11 +24,20 @@ import java.util.ArrayList;
 public class ControladorIngresarStock implements ActionListener, CRUD{
     private final Ingresar modeloIngresar;
     private final IngresarStock ventanaIngresar;
+    private int idUsuario;
     
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
     private PreparedStatement preState;
     private ResultSet resultado;
+    
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
     public ControladorIngresarStock(Ingresar ingresar, IngresarStock ventanaIngresar) {
         this.modeloIngresar = ingresar;
@@ -44,12 +53,35 @@ public class ControladorIngresarStock implements ActionListener, CRUD{
     
     @Override
     public void actionPerformed(ActionEvent e){
+        establecerDatosSql();
+        ingresarStock();
+        ventanaIngresar.setVisible(false);
+        javax.swing.JOptionPane.showMessageDialog(ventanaIngresar,"Ingreso de datos: \n Nombre: "+modeloIngresar.getProductoIngresado()+"\ncantidad: "+modeloIngresar.getCantidad()+"\nfecha actual"+modeloIngresar.getFechaHoy()+"\nfecha Caducidad"+modeloIngresar.getFechaCaducidad());
+        ventanaIngresar.dispose();
+    }
+
+    public void establecerDatosSql(){
         modeloIngresar.establecerDatos((String)ventanaIngresar.productosCombo.getSelectedItem(), (int)ventanaIngresar.cantidadSpinner.getValue());
         modeloIngresar.setFechaCaducidad((int)ventanaIngresar.diaSpinner.getValue(), (int)ventanaIngresar.mesSpinner.getValue(), (int)ventanaIngresar.anioSpinner.getValue());
-        javax.swing.JOptionPane.showMessageDialog(ventanaIngresar,"Ingreso de datos: \n Nombre: "+modeloIngresar.getProductoIngresado()+"\ncantidad: "+modeloIngresar.getCantidad()+"\nfecha actual"+modeloIngresar.getFechaHoy()+"\nfecha Caducidad"+modeloIngresar.getFechaCaducidad());
     }
-    
-    
+
+    public void ingresarStock(){
+        //MODIFICAR ALMACEN Y REGISTRO (ID USUARIO,NOMBRE,CANTIDAD,FECHA DE CADUCIDAD,FECHA ACTUAL)
+        //CREAR PROCEDIMIENTO ALMACENADO QUE RECIVA 5 PARAMETROS MÁS EL ID USUARIO
+        String sql = "EXEC IngresarStock ?,?,?,?,?";
+        try{
+            acceso = conexionMenu.Conectar();
+            preState = acceso.prepareStatement(sql);
+            preState.setInt(1,getIdUsuario());
+            preState.setString(2,modeloIngresar.getProductoIngresado());
+            preState.setInt(3,modeloIngresar.getCantidad());
+            preState.setDate(4,modeloIngresar.getSqlFechaCaducidad());
+            preState.setDate(5,modeloIngresar.getSqlFecha());
+            resultado = preState.executeQuery();
+        } catch(SQLException e){
+            System.out.println("Error :"+e);
+        }
+    }
     
     public final void listarProductosComboBox(){
         List<Producto> listaProduc = listar();

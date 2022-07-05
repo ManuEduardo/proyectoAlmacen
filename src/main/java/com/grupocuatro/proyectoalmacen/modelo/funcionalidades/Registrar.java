@@ -27,18 +27,14 @@ public class Registrar {
     public java.sql.Date getSqlFecha() {
         return sqlFecha;
     }
-    
-    public Date getFecha() {
-        return fecha;
-    }
 
     public String getFechaHoy() {
         return fechaHoy;
     }
     
     public void establecerDatos(String nombre,String descripcion,float precio){
-        productoRegistrado.setNombreProducto(nombre);
-        productoRegistrado.setDescripcionProducto(descripcion);
+        productoRegistrado.setNombreProducto(nombre.trim());
+        productoRegistrado.setDescripcionProducto(descripcion.trim());
         productoRegistrado.setPrecioProducto(precio);
     }
 }
