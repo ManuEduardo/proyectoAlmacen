@@ -45,10 +45,8 @@ public class ControladorVerUsuarios implements CRUD{
         this.ventanaUsuarios.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modeloTablaUsuario.setRowCount(0);
-                ventanaUsuarios.usuariosJTable.setModel(modeloTablaUsuario);
+                actualizarTablaUsuarios();
                 javax.swing.JOptionPane.showMessageDialog(ventanaUsuarios,"Se ha actualizado");
-                listarUsuarios();
             }
         });
         this.ventanaUsuarios.crearButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,6 +63,12 @@ public class ControladorVerUsuarios implements CRUD{
         ventanaUsuarios.setTitle("Registros de Actividad Almacen");
     }
 
+    public void actualizarTablaUsuarios(){
+        modeloTablaUsuario.setRowCount(0);
+        ventanaUsuarios.usuariosJTable.setModel(modeloTablaUsuario);
+        listarUsuarios();
+    }
+    
     public final void listarUsuarios(){
         List<Usuario> listaUsuario = listar();
         modeloTablaUsuario = (DefaultTableModel)ventanaUsuarios.usuariosJTable.getModel();

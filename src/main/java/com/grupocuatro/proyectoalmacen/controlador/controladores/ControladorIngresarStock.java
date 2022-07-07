@@ -48,6 +48,7 @@ public class ControladorIngresarStock implements ActionListener, CRUD{
     }
     public void iniciarVentanaIngresar(){
         ventanaIngresar.setTitle("Ingresar Producto");
+        actualizarComboBox();
         ventanaIngresar.setVisible(true);
     }
     
@@ -81,6 +82,11 @@ public class ControladorIngresarStock implements ActionListener, CRUD{
         } catch(SQLException e){
             System.out.println("Error :"+e);
         }
+    }
+    
+    public void actualizarComboBox(){
+        ventanaIngresar.productosCombo.removeAllItems();
+        listarProductosComboBox();
     }
     
     public final void listarProductosComboBox(){

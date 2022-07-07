@@ -21,6 +21,8 @@ public class ControladorCrearUsuario implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("uwu");
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 }

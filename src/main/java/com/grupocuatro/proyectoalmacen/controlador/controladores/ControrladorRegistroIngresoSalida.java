@@ -36,10 +36,8 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
         this.ventanaRegistros.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modeloTablaRegistros.setRowCount(0);
-                ventanaRegistros.registrosJTable.setModel(modeloTablaRegistros);
+                actualizarRegistros();
                 javax.swing.JOptionPane.showMessageDialog(ventanaRegistros,"Se ha actualizado");
-                listarRegistros();
             }
         });
     }
@@ -47,8 +45,15 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
     public void iniciarVentanasRegistros(){
         ventanaRegistros.setVisible(true);
         ventanaRegistros.setTitle("Registros de Actividad Almacen");
+        actualizarRegistros();
     }
 
+    public void actualizarRegistros(){
+        modeloTablaRegistros.setRowCount(0);
+        ventanaRegistros.registrosJTable.setModel(modeloTablaRegistros);
+        listarRegistros();
+    }
+    
     public final void listarRegistros(){
         List<RegistroIngresoSalida> listaRegistro = listar();
         modeloTablaRegistros = (DefaultTableModel)ventanaRegistros.registrosJTable.getModel();

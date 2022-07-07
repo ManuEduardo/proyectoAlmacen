@@ -28,7 +28,7 @@ public class CrearUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tipoSpinner = new javax.swing.JPanel();
+        contenidoPanel = new javax.swing.JPanel();
         tituloLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
         nombreField = new javax.swing.JTextField();
@@ -38,17 +38,20 @@ public class CrearUsuario extends javax.swing.JFrame {
         contrasenaLabel = new javax.swing.JLabel();
         presioLabel = new javax.swing.JLabel();
         crearButton = new javax.swing.JButton();
-        tipoSpinner1 = new javax.swing.JSpinner();
+        preguntasLabel = new javax.swing.JLabel();
+        respuestaField = new javax.swing.JTextField();
+        preguntaComboBox = new javax.swing.JComboBox<>();
+        tipoUsuarioComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(435, 420));
+        setMinimumSize(new java.awt.Dimension(435, 450));
         setResizable(false);
-        setSize(new java.awt.Dimension(435, 420));
+        setSize(new java.awt.Dimension(435, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tipoSpinner.setBackground(new java.awt.Color(242, 174, 48));
-        tipoSpinner.setMaximumSize(new java.awt.Dimension(435, 420));
-        tipoSpinner.setMinimumSize(new java.awt.Dimension(435, 420));
+        contenidoPanel.setBackground(new java.awt.Color(242, 174, 48));
+        contenidoPanel.setMaximumSize(new java.awt.Dimension(435, 450));
+        contenidoPanel.setMinimumSize(new java.awt.Dimension(435, 450));
 
         tituloLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(217, 11, 49));
@@ -57,12 +60,13 @@ public class CrearUsuario extends javax.swing.JFrame {
         tituloLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         nombreLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(255, 255, 255));
         nombreLabel.setText("Ingrese el Nombre");
 
         nombreField.setBackground(new java.awt.Color(242, 174, 48));
         nombreField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         nombreField.setForeground(new java.awt.Color(153, 153, 153));
-        nombreField.setText("Nombre del Producto");
+        nombreField.setText("Nombre del Usuario");
         nombreField.setBorder(null);
         nombreField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -110,6 +114,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         contrasenaLabel.setText("Contraseña");
 
         presioLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        presioLabel.setForeground(new java.awt.Color(255, 255, 255));
         presioLabel.setText("Seleccione tipo de Usuario");
 
         crearButton.setBackground(new java.awt.Color(158, 191, 36));
@@ -130,92 +135,115 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
 
-        tipoSpinner1.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        tipoSpinner1.setModel(new javax.swing.SpinnerListModel(new String[] {""}));
-        tipoSpinner1.setBorder(null);
-        tipoSpinner1.setFocusable(false);
-        tipoSpinner1.setMinimumSize(new java.awt.Dimension(60, 30));
-        tipoSpinner1.setPreferredSize(new java.awt.Dimension(60, 30));
-        tipoSpinner1.setRequestFocusEnabled(false);
+        preguntasLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        preguntasLabel.setForeground(new java.awt.Color(255, 255, 255));
+        preguntasLabel.setText("Seleccione pregunta de seguridad");
 
-        javax.swing.GroupLayout tipoSpinnerLayout = new javax.swing.GroupLayout(tipoSpinner);
-        tipoSpinner.setLayout(tipoSpinnerLayout);
-        tipoSpinnerLayout.setHorizontalGroup(
-            tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(tituloLabel))
-                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(crearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                                .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                                        .addComponent(nombreLabel)
-                                        .addGap(25, 25, 25)
-                                        .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                                        .addComponent(presioLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(tipoSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tipoSpinnerLayout.createSequentialGroup()
-                                        .addComponent(contrasenaLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(contrasenaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
-                                        .addGap(170, 170, 170)
-                                        .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(contrasenaField, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(nombreSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(25, 25, 25)))))
-                .addContainerGap(17, Short.MAX_VALUE))
+        respuestaField.setForeground(new java.awt.Color(204, 204, 204));
+        respuestaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        respuestaField.setText("respuesta");
+        respuestaField.setBorder(null);
+        respuestaField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                respuestaFieldActionPerformed(evt);
+            }
+        });
+
+        preguntaComboBox.setBorder(null);
+        preguntaComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout contenidoPanelLayout = new javax.swing.GroupLayout(contenidoPanel);
+        contenidoPanel.setLayout(contenidoPanelLayout);
+        contenidoPanelLayout.setHorizontalGroup(
+            contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenidoPanelLayout.createSequentialGroup()
+                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contenidoPanelLayout.createSequentialGroup()
+                        .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(contenidoPanelLayout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(preguntasLabel)
+                                    .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(contenidoPanelLayout.createSequentialGroup()
+                                            .addComponent(preguntaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(respuestaField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contenidoPanelLayout.createSequentialGroup()
+                                            .addComponent(nombreLabel)
+                                            .addGap(25, 25, 25)
+                                            .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contenidoPanelLayout.createSequentialGroup()
+                                            .addComponent(presioLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(tipoUsuarioComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(contenidoPanelLayout.createSequentialGroup()
+                                            .addComponent(contrasenaLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(contrasenaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contenidoPanelLayout.createSequentialGroup()
+                                            .addGap(170, 170, 170)
+                                            .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(contrasenaField, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(nombreSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(contenidoPanelLayout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(tituloLabel)))
+                        .addGap(0, 30, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(crearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        tipoSpinnerLayout.setVerticalGroup(
-            tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tipoSpinnerLayout.createSequentialGroup()
+        contenidoPanelLayout.setVerticalGroup(
+            contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenidoPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(tituloLabel)
                 .addGap(18, 18, 18)
-                .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
+                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contenidoPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(nombreLabel))
                     .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(nombreSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(contrasenaLabel)
-                    .addGroup(tipoSpinnerLayout.createSequentialGroup()
+                    .addGroup(contenidoPanelLayout.createSequentialGroup()
                         .addComponent(contrasenaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(contrasenaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
-                .addGroup(tipoSpinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(21, 21, 21)
+                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(presioLabel)
-                    .addComponent(tipoSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                    .addComponent(tipoUsuarioComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(preguntasLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(contenidoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(respuestaField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addComponent(crearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addContainerGap())
         );
 
-        getContentPane().add(tipoSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 435, 420));
+        getContentPane().add(contenidoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 435, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusGained
-        if(nombreField.getText().equals("Nombre del Producto")){
+        if(nombreField.getText().equals("Nombre del Usuario")){
             nombreField.setText("");
             nombreField.setForeground(Color.black);
         }
     }//GEN-LAST:event_nombreFieldFocusGained
 
     private void nombreFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusLost
-        if(nombreField.getText().equals("Nombre del Producto")||nombreField.getText().equals("")){
-            nombreField.setText("Nombre del Producto");
+        if(nombreField.getText().equals("Nombre del Usuario")||nombreField.getText().equals("")){
+            nombreField.setText("Nombre del Usuario");
             nombreField.setForeground(Color.gray);
         }
     }//GEN-LAST:event_nombreFieldFocusLost
@@ -254,6 +282,10 @@ public class CrearUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_crearButtonActionPerformed
 
+    private void respuestaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respuestaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_respuestaFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,6 +322,7 @@ public class CrearUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel contenidoPanel;
     public javax.swing.JPasswordField contrasenaField;
     private javax.swing.JLabel contrasenaLabel;
     private javax.swing.JSeparator contrasenaSeparator;
@@ -297,9 +330,11 @@ public class CrearUsuario extends javax.swing.JFrame {
     public javax.swing.JTextField nombreField;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JSeparator nombreSeparator;
+    public javax.swing.JComboBox<String> preguntaComboBox;
+    private javax.swing.JLabel preguntasLabel;
     private javax.swing.JLabel presioLabel;
-    private javax.swing.JPanel tipoSpinner;
-    public javax.swing.JSpinner tipoSpinner1;
+    public javax.swing.JTextField respuestaField;
+    public javax.swing.JComboBox<String> tipoUsuarioComboBox;
     private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }
