@@ -4,6 +4,7 @@
  */
 package com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario;
 
+import java.awt.Color;
 /**
  *
  * @author manue
@@ -26,21 +27,220 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        tituloLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        nombreSeparator = new javax.swing.JSeparator();
+        nombreField = new javax.swing.JTextField();
+        preguntasLabel = new javax.swing.JLabel();
+        preguntaComboBox = new javax.swing.JComboBox<>();
+        mostrarButton = new javax.swing.JButton();
+        respuestaField = new javax.swing.JTextField();
+        preguntasLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(350, 470));
+        setResizable(false);
+        setSize(new java.awt.Dimension(350, 470));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(217, 11, 49));
+        jPanel1.setMaximumSize(new java.awt.Dimension(350, 470));
+        jPanel1.setMinimumSize(new java.awt.Dimension(350, 470));
+
+        tituloLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        tituloLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tituloLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloLabel.setText("RECUPERAR CONTRASEÑA");
+        tituloLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        nombreLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nombreLabel.setText("Ingrese el Nombre de su Usuario");
+
+        nombreSeparator.setForeground(new java.awt.Color(0, 0, 0));
+
+        nombreField.setBackground(new java.awt.Color(217, 11, 49));
+        nombreField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        nombreField.setForeground(new java.awt.Color(227, 227, 227));
+        nombreField.setText("Nombre del Usuario");
+        nombreField.setBorder(null);
+        nombreField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                nombreFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nombreFieldFocusLost(evt);
+            }
+        });
+        nombreField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nombreFieldMousePressed(evt);
+            }
+        });
+        nombreField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreFieldActionPerformed(evt);
+            }
+        });
+
+        preguntasLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        preguntasLabel.setForeground(new java.awt.Color(255, 255, 255));
+        preguntasLabel.setText("Seleccione su pregunta de seguridad");
+
+        preguntaComboBox.setBorder(null);
+        preguntaComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        mostrarButton.setBackground(new java.awt.Color(158, 191, 36));
+        mostrarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        mostrarButton.setForeground(new java.awt.Color(255, 255, 255));
+        mostrarButton.setText("MOSTRAR");
+        mostrarButton.setBorder(null);
+        mostrarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mostrarButton.setFocusable(false);
+        mostrarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mostrarButtonMouseClicked(evt);
+            }
+        });
+        mostrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarButtonActionPerformed(evt);
+            }
+        });
+
+        respuestaField.setForeground(new java.awt.Color(204, 204, 204));
+        respuestaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        respuestaField.setText("respuesta");
+        respuestaField.setBorder(null);
+        respuestaField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                respuestaFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                respuestaFieldFocusLost(evt);
+            }
+        });
+        respuestaField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                respuestaFieldActionPerformed(evt);
+            }
+        });
+
+        preguntasLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 20)); // NOI18N
+        preguntasLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        preguntasLabel1.setText("Ingrese su respuesta");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tituloLabel)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(preguntasLabel)
+                            .addContainerGap(24, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(preguntaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(respuestaField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(preguntasLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(mostrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(tituloLabel)
+                .addGap(28, 28, 28)
+                .addComponent(nombreLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(nombreSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(preguntasLabel)
+                .addGap(18, 18, 18)
+                .addComponent(preguntaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(preguntasLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(respuestaField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(mostrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nombreFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusGained
+        if(nombreField.getText().equals("Nombre del Usuario")){
+            nombreField.setText("");
+            nombreField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_nombreFieldFocusGained
+
+    private void nombreFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreFieldFocusLost
+        if(nombreField.getText().equals("Nombre del Usuario")||nombreField.getText().equals("")){
+            nombreField.setText("Nombre del Usuario");
+            nombreField.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_nombreFieldFocusLost
+
+    private void nombreFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreFieldMousePressed
+
+    }//GEN-LAST:event_nombreFieldMousePressed
+
+    private void nombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreFieldActionPerformed
+
+    private void mostrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarButtonMouseClicked
+
+    }//GEN-LAST:event_mostrarButtonMouseClicked
+
+    private void mostrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarButtonActionPerformed
+
+    }//GEN-LAST:event_mostrarButtonActionPerformed
+
+    private void respuestaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respuestaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_respuestaFieldActionPerformed
+
+    private void respuestaFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_respuestaFieldFocusGained
+        if(respuestaField.getText().equals("respuesta")){
+            respuestaField.setText("");
+            respuestaField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_respuestaFieldFocusGained
+
+    private void respuestaFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_respuestaFieldFocusLost
+        if(respuestaField.getText().equals("respuesta")||respuestaField.getText().equals("")){
+            respuestaField.setText("respuesta");
+            respuestaField.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_respuestaFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -78,5 +278,15 @@ public class RecuperarContrasena extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton mostrarButton;
+    public javax.swing.JTextField nombreField;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JSeparator nombreSeparator;
+    public javax.swing.JComboBox<String> preguntaComboBox;
+    private javax.swing.JLabel preguntasLabel;
+    private javax.swing.JLabel preguntasLabel1;
+    public javax.swing.JTextField respuestaField;
+    private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }

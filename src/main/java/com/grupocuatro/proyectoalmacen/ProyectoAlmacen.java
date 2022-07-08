@@ -5,26 +5,18 @@
 
 package com.grupocuatro.proyectoalmacen;
 
-import com.grupocuatro.proyectoalmacen.modelo.usuario.Usuario;
-import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.CrearUsuario;
-import com.grupocuatro.proyectoalmacen.controlador.controladores.ControladorCrearUsuario;
-
 
 
 import com.grupocuatro.proyectoalmacen.controlador.LogicaModeloVista;
 public class ProyectoAlmacen {
-    //public static final LogicaModeloVista test = new LogicaModeloVista();
+    public static final LogicaModeloVista test = new LogicaModeloVista();
     public static void main(String[] args) {
-        //test.app();
-        Usuario usuarioUwu = new Usuario();
-        CrearUsuario ventanaUwu = new CrearUsuario();
-        ControladorCrearUsuario crearuwu = new ControladorCrearUsuario(usuarioUwu,ventanaUwu);
-        crearuwu.iniciarVentanaCrear();
+        test.app();
             //Proximas funcionalidades
         //-Retirar Stock
         //-Crear Usuarios
         //-Eliminar Producto
         //-Recuperar Contraseña
-            //Crear ventanas para recuperar contraseñas
+            //modificar base de datos
     }
 }

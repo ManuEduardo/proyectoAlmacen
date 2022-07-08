@@ -7,6 +7,9 @@ import com.grupocuatro.proyectoalmacen.controlador.Conexion;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Login;
 import com.grupocuatro.proyectoalmacen.vista.VentanaLogin;
 
+import com.grupocuatro.proyectoalmacen.modelo.usuario.Usuario;
+import com.grupocuatro.proyectoalmacen.vista.ventanas.crudUsuario.RecuperarContrasena;
+
 //No se imparta Conexion dado que esta en el mismo paquete
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +21,10 @@ import java.sql.ResultSet;
 public abstract class ControladorLogin{
     private final Login modeloLogin;
     private final VentanaLogin ventanaLogin;
+    
+    private Usuario contrasenaUsuario;
+    private final RecuperarContrasena ventanaContrasena = new RecuperarContrasena();
+    private final ControladorRecuperarContrasena controladorContrasena;
     
     private final Conexion conexionLogin = new Conexion();
     private Connection acceso;
@@ -58,7 +65,22 @@ public abstract class ControladorLogin{
         this.ventanaLogin.entrarBoton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {entrarBotonValidador(evt);}});
-        //Se establece la coneccion
+        
+        this.controladorContrasena = new ControladorRecuperarContrasena(ventanaContrasena,contrasenaUsuario) {
+            @Override
+            public void salir() {
+                controladorContrasena.ventanaRecuperarContrasena.setVisible(false);
+                vaciarCampos();
+                ventanaLogin.setVisible(true);
+                controladorContrasena.ventanaRecuperarContrasena.dispose();
+            }
+        };
+        this.ventanaLogin.recuperarLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                controladorContrasena.IniciarVentanaRecuperar();
+                ventanaLogin.setVisible(false);
+            }});
     }
     
     

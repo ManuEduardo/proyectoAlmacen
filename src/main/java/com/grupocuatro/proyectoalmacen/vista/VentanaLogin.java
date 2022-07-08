@@ -124,6 +124,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         recuperarLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
         recuperarLabel.setForeground(new java.awt.Color(102, 102, 102));
         recuperarLabel.setText("Recuperar Contraseña");
+        recuperarLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout fondoFormLoginLayout = new javax.swing.GroupLayout(fondoFormLogin);
         fondoFormLogin.setLayout(fondoFormLoginLayout);
