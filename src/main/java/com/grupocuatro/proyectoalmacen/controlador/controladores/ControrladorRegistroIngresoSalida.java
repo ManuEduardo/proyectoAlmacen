@@ -103,7 +103,7 @@ public class ControrladorRegistroIngresoSalida implements CRUD{
     }
 
     @Override
-    public void eliminar() {
+    public void eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

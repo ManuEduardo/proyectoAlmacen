@@ -105,7 +105,10 @@ public abstract class ControladorMenuPrincipal implements CRUD{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 if(permisoUsuario.equals("Administrador")){
-                    //falta implementar
+                    //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                    //Dos horas resolviendo este bug y el problema era de que la llamada de eventos es como la llamada de eventos de 
+                    //los botones de HTML
+                    eliminarProducto(evt);
                 }else{
                     javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"NO TIENE PERMISO PARA ESTA FUNCIONALIDAD");
                 }
@@ -114,12 +117,28 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         this.ventanaMenu.actualizarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modeloTablaProducto.setRowCount(0);
-                ventanaMenu.productosJTable.setModel(modeloTablaProducto);
-                javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"Se ha actualizado");
-                listarProductos();
+                actualizar();
             }
         });
+    }
+    
+    public void eliminarProducto(java.awt.event.MouseEvent evt){
+        int fila = ventanaMenu.productosJTable.getSelectedRow();
+        if(fila>=0){
+            int idEliminar = (int) ventanaMenu.productosJTable.getValueAt(fila, 0);
+            eliminar(idEliminar);
+            javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"SE A ELIMINADO EL PRODUCTO");
+            actualizar();
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"SELECCIONE UN PRODUCTO EN LA TABLA PRODUCTO");
+        }
+    }
+    
+    public void actualizar(){
+        modeloTablaProducto.setRowCount(0);
+        ventanaMenu.productosJTable.setModel(modeloTablaProducto);
+        javax.swing.JOptionPane.showMessageDialog(ventanaMenu,"Se ha actualizado");
+        listarProductos();
     }
     
     //METODOS Y FUNCIONES DE LA CLASE
@@ -170,7 +189,7 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     @Override
     public List listar(){
         List<Producto> listaProductos = new ArrayList<>();
-        String sql = "SELECT p.id, p.nombre, p.descripcion, p.precio, (select sum(cantidad) from almacen where id_producto = p.id) as cantidad FROM producto p";
+        String sql = "SELECT p.id, p.nombre, p.descripcion, p.precio, (select sum(cantidad) from almacen where id_producto = p.id) as cantidad FROM producto p where id > 0";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);
@@ -191,15 +210,20 @@ public abstract class ControladorMenuPrincipal implements CRUD{
     }
 
     @Override
-    public void crear() {
-        //No usado
+    public void eliminar(int idProducto) {
+        String sql = "EXEC EliminarProducto ?";
+        try{
+            acceso = conexionMenu.Conectar();
+            preState = acceso.prepareStatement(sql);
+            preState.setInt(1,idProducto);
+            resultado = preState.executeQuery();
+        } catch(SQLException e){
+            System.out.println("Error :"+e);
+        }
     }
-
+    
+    
     @Override
-    public void eliminar() {
-        //No usado
+    public void crear() {
     }
-    
-    
-    
 }

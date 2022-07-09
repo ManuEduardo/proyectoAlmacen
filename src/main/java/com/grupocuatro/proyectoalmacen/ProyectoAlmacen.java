@@ -15,7 +15,6 @@ public class ProyectoAlmacen {
             //Proximas funcionalidades
         //-Retirar Stock
         //-Crear Usuarios
-        //-Eliminar Producto
         //-Recuperar Contraseña
             //modificar base de datos
     }

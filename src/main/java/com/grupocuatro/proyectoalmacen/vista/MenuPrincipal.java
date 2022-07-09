@@ -14,6 +14,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     protected Date fecha = new Date();
     protected SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/YYYY");
     protected String fechaHoy = fechaFormato.format(fecha);
+    private int idProductoSeleccionado;
+
+    public int getIdProductoSeleccionado() {
+        return idProductoSeleccionado;
+    }
+
+    public void setIdProductoSeleccionado(int idProductoSeleccionado) {
+        this.idProductoSeleccionado = idProductoSeleccionado;
+    }
+    
+    
 
     /**
      * Creates new form MenuPrincipal
@@ -66,6 +77,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         titleLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 100)); // NOI18N
         titleLabel.setForeground(new java.awt.Color(255, 255, 255));
         titleLabel.setText("HEART FOOD");
+        titleLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                titleLabelMouseClicked(evt);
+            }
+        });
         arribaJPanel.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 6, -1, -1));
 
         fechaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
@@ -203,7 +219,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         productosJTable.setRowHeight(30);
         productosJTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
         productosJTable.setSelectionForeground(new java.awt.Color(255, 204, 153));
+        productosJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        productosJTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         productosJTable.setShowGrid(true);
+        productosJTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                productosJTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(productosJTable);
         if (productosJTable.getColumnModel().getColumnCount() > 0) {
             productosJTable.getColumnModel().getColumn(0).setMinWidth(90);
@@ -307,11 +330,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void actualizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarButtonMouseClicked
         // TODO add your handling code here:
+
     }//GEN-LAST:event_actualizarButtonMouseClicked
 
     private void registrarProductoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarProductoButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_registrarProductoButtonMouseClicked
+
+    private void productosJTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productosJTableMouseClicked
+
+    }//GEN-LAST:event_productosJTableMouseClicked
+
+    private void titleLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLabelMouseClicked
+        // TODO 
+    }//GEN-LAST:event_titleLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -357,7 +389,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel infoJPanel;
     public javax.swing.JButton ingresarStockButton;
     private javax.swing.JPanel izquierdaJPanel;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel nombreLabel;
     public javax.swing.JTable productosJTable;

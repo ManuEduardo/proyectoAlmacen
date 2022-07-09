@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface CRUD {
     void crear();
-    void eliminar();
+    void eliminar(int id);
     List listar();
 }

@@ -59,7 +59,7 @@ public class ControladorRetirarStock implements ActionListener, CRUD{
     @Override
     public List listar() {
         List<Producto> listaProductos = new ArrayList<>();
-        String sql = "SELECT * FROM PRODUCTO";
+        String sql = "SELECT * FROM PRODUCTO where id > 0";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);
@@ -84,7 +84,7 @@ public class ControladorRetirarStock implements ActionListener, CRUD{
     }
 
     @Override
-    public void eliminar() {
+    public void eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
