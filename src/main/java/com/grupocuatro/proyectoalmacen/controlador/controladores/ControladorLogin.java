@@ -104,7 +104,7 @@ public abstract class ControladorLogin{
         
         if (validadorDeDatos(usuarioIngresado,contrasenaIngresada)){
             funcionalidadButtonLogin();//boton usado en el controlador principal
-            //vaciarCampos();   NO OLVIDAR QUITAR EL COMENTARIO
+            vaciarCampos();   
             
         }else{
             setTipoUsuario(null);
