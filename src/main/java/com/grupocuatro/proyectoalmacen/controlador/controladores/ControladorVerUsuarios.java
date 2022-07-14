@@ -55,6 +55,12 @@ public class ControladorVerUsuarios implements CRUD{
                 controladorCrearUsuario.iniciarVentanaCrear();
             }
         });
+        this.ventanaUsuarios.eliminarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarUsuario(evt);
+            }
+        });
     }
     
     
@@ -63,6 +69,18 @@ public class ControladorVerUsuarios implements CRUD{
         ventanaUsuarios.setTitle("Registros de Actividad Almacen");
     }
 
+    public void eliminarUsuario(java.awt.event.MouseEvent evt){
+        int fila = ventanaUsuarios.usuariosJTable.getSelectedRow();
+        if(fila>=0){
+            int idEliminar = (int) ventanaUsuarios.usuariosJTable.getValueAt(fila, 0);
+            eliminar(idEliminar);
+            javax.swing.JOptionPane.showMessageDialog(ventanaUsuarios,"SE A ELIMINADO EL Usuario");
+            actualizarTablaUsuarios();
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(ventanaUsuarios,"SELECCIONE UN USUARIO EN LA TABLA USUARIOS");
+        }
+    }
+    
     public void actualizarTablaUsuarios(){
         modeloTablaUsuario.setRowCount(0);
         ventanaUsuarios.usuariosJTable.setModel(modeloTablaUsuario);
@@ -86,7 +104,7 @@ public class ControladorVerUsuarios implements CRUD{
     @Override
     public List listar() {
         List<Usuario> listaUsuario = new ArrayList<>();
-        String sql = "SELECT id,nombre,contrasena,(select tipo from tipoUsuario where id_tipo = id) as tipo from Usuario";
+        String sql = "SELECT id,nombre,contrasena,(select tipo from tipoUsuario where id_tipo = id) as tipo from Usuario where id>0";
         try{
             acceso = conexionMenu.Conectar();
             preState = acceso.prepareStatement(sql);
@@ -112,6 +130,14 @@ public class ControladorVerUsuarios implements CRUD{
 
     @Override
     public void eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "exec EliminarUsuario ?";
+        try{
+            acceso = conexionMenu.Conectar();
+            preState = acceso.prepareStatement(sql);
+            preState.setInt(1,id);
+            resultado = preState.executeQuery();
+        } catch(SQLException e){
+            System.out.println("Error :"+e);
+        }
     }
 }

@@ -14,7 +14,6 @@ public class ProyectoAlmacen {
         test.app();
             //Proximas funcionalidades
         //-Retirar Stock
-        //-Eliminar Usuarios
         //-Recuperar Contraseña
     }
 }

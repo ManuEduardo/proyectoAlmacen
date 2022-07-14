@@ -32,6 +32,7 @@ public class VerUsuarios extends javax.swing.JFrame {
         usuariosJTable = new javax.swing.JTable();
         crearButton = new javax.swing.JButton();
         actualizarButton = new javax.swing.JButton();
+        eliminarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 500));
@@ -114,6 +115,20 @@ public class VerUsuarios extends javax.swing.JFrame {
         });
         fondoJPanel.add(actualizarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 160, 50));
 
+        eliminarButton.setBackground(new java.awt.Color(217, 11, 49));
+        eliminarButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        eliminarButton.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarButton.setText("ELIMINAR USUARIO");
+        eliminarButton.setBorder(null);
+        eliminarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminarButton.setFocusable(false);
+        eliminarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarButtonMouseClicked(evt);
+            }
+        });
+        fondoJPanel.add(eliminarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, 200, 70));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,6 +158,10 @@ public class VerUsuarios extends javax.swing.JFrame {
     private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_actualizarButtonActionPerformed
+
+    private void eliminarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,6 +201,7 @@ public class VerUsuarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton actualizarButton;
     public javax.swing.JButton crearButton;
+    public javax.swing.JButton eliminarButton;
     private javax.swing.JPanel fondoJPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel tituloJLabel;
