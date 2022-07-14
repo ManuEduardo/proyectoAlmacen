@@ -143,6 +143,14 @@ public class CrearUsuario extends javax.swing.JFrame {
         respuestaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         respuestaField.setText("respuesta");
         respuestaField.setBorder(null);
+        respuestaField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                respuestaFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                respuestaFieldFocusLost(evt);
+            }
+        });
         respuestaField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 respuestaFieldActionPerformed(evt);
@@ -290,6 +298,20 @@ public class CrearUsuario extends javax.swing.JFrame {
     private void respuestaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respuestaFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_respuestaFieldActionPerformed
+
+    private void respuestaFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_respuestaFieldFocusGained
+        if(String.valueOf(respuestaField.getText()).equals("respuesta")){
+            respuestaField.setText("");
+            respuestaField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_respuestaFieldFocusGained
+
+    private void respuestaFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_respuestaFieldFocusLost
+        if(respuestaField.getText().equals("respuestas")||respuestaField.getText().equals("")){
+            respuestaField.setText("respuesta");
+            respuestaField.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_respuestaFieldFocusLost
 
     /**
      * @param args the command line arguments
