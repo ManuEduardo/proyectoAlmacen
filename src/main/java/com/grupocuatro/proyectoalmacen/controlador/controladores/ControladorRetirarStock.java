@@ -4,8 +4,6 @@
  */
 package com.grupocuatro.proyectoalmacen.controlador.controladores;
 import com.grupocuatro.proyectoalmacen.controlador.Conexion;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import com.grupocuatro.proyectoalmacen.vista.ventanas.RetirarStock;
 import com.grupocuatro.proyectoalmacen.modelo.funcionalidades.Retirar;
@@ -22,20 +20,34 @@ import java.util.List;
  *
  * @author manue
  */
-public class ControladorRetirarStock implements ActionListener, CRUD{
+public class ControladorRetirarStock implements CRUD{
     private final RetirarStock ventanaRetirar;
     private final Retirar modeloRetirar;
+    private int idUsuario;
     
     private final Conexion conexionMenu = new Conexion();
     private Connection acceso;
     private PreparedStatement preState;
     private ResultSet resultado;
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+    
     public ControladorRetirarStock(Retirar modeloRetirar, RetirarStock ventanaRetirar) {
         this.ventanaRetirar = ventanaRetirar;
         this.modeloRetirar = modeloRetirar;
-        this.ventanaRetirar.retirarButton.addActionListener(this);
         listarProductosComboBox();
+        this.ventanaRetirar.retirarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRetirar();
+            }
+        });
     }
 
     public void iniciarVentanaRetirar(){
@@ -43,12 +55,37 @@ public class ControladorRetirarStock implements ActionListener, CRUD{
         ventanaRetirar.setTitle("Retirar Producto");
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        modeloRetirar.establecerDatos((String)ventanaRetirar.productosCombo.getSelectedItem(), (int)ventanaRetirar.cantidadSpinner.getValue());
-        javax.swing.JOptionPane.showMessageDialog(ventanaRetirar,"Ingreso de datos: \n Producto: "+modeloRetirar.getProductoRetirado()+"\n cantidad: "+modeloRetirar.getCantidad());
-    }
 
+    public void vaciarCampos(){
+        ventanaRetirar.cantidadSpinner.setValue(1);
+    }
+    
+    public void botonRetirar(){
+        modeloRetirar.establecerDatos((String)ventanaRetirar.productosCombo.getSelectedItem(), (int)ventanaRetirar.cantidadSpinner.getValue());
+        if(modeloRetirar.getCantidad()<=0){
+            javax.swing.JOptionPane.showMessageDialog(ventanaRetirar,"INGRESE UN VALOR PARA RETIRAR POSITIVO");
+            }
+        javax.swing.JOptionPane.showMessageDialog(ventanaRetirar,"Ingreso de datos: \n Producto: "+modeloRetirar.getProductoRetirado()+"\n cantidad: "+modeloRetirar.getCantidad());
+        retirarStock();
+        vaciarCampos();
+    }
+    
+    public void retirarStock(){
+        //datos guardados en el modeloRetirar modeloRetirar.getProductoRetirado() modeloRetirar.getCantidad() getIdUsuario()
+        String sql = "EXEC RetirarStock ?,?,?,?";
+        try{
+            acceso = conexionMenu.Conectar();
+            preState = acceso.prepareStatement(sql);
+            preState.setInt(1,getIdUsuario());
+            preState.setString(2,modeloRetirar.getProductoRetirado());
+            preState.setInt(3,modeloRetirar.getCantidad());
+            preState.setDate(4,modeloRetirar.getSqlFecha());
+            resultado = preState.executeQuery();
+        } catch(SQLException e){
+            System.out.println("Error :"+e);
+        }
+    }
+    
     public final void listarProductosComboBox(){
         List<Producto> listaProduc = listar();
         for (int i = 0; i < listaProduc.size(); i++) {

@@ -45,7 +45,4 @@ public class ControladorMenuVentanas {
         this.controladorRegistros = new ControrladorRegistroIngresoSalida(ventanaRegistros);
         this.controladorUsuarios = new ControladorVerUsuarios(ventanaUsuarios);
     }
-    
-    
-
 }

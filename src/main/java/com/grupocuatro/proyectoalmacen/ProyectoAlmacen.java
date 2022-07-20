@@ -12,7 +12,5 @@ public class ProyectoAlmacen {
     public static final LogicaModeloVista test = new LogicaModeloVista();
     public static void main(String[] args) {
         test.app();
-            //Proximas funcionalidades
-        //-Retirar Stock
     }
 }

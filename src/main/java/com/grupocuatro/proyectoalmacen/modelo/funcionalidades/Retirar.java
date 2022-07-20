@@ -14,10 +14,19 @@ public class Retirar {
     protected Date fecha = new Date();
     protected SimpleDateFormat fechaFormato = new SimpleDateFormat("dd/MM/YYYY");
     protected String fechaHoy = fechaFormato.format(fecha);
+        private java.sql.Date sqlFecha = new java.sql.Date(fecha.getTime());
     
     protected String productoRetirado;
     protected int cantidad;
 
+    public java.sql.Date getSqlFecha() {
+        return sqlFecha;
+    }
+
+    public void setSqlFecha(java.sql.Date sqlFecha) {
+        this.sqlFecha = sqlFecha;
+    }
+    
     public Date getFecha() {
         return fecha;
     }

@@ -163,9 +163,11 @@ public abstract class ControladorMenuPrincipal implements CRUD{
         establecerIdUsuarioVentanas(idUsuario);
     }
     
+    //METODO PARA PODER ESTABLECER EL ID LOGUEADO DEL USUSARIO
     public void establecerIdUsuarioVentanas(int idUsuario){
         controladorVentanas.controladorRegistrar.setIdUsuario(idUsuario);
         controladorVentanas.controladorIngresar.setIdUsuario(idUsuario);
+        controladorVentanas.controladorRetirar.setIdUsuario(idUsuario);
     }
     
     
