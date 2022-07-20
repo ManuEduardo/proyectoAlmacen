@@ -36,8 +36,15 @@ In addition to deploy the sql script that is in the BD folder.
 
 
 ## Windows
-
-
+![LOGIN!](images/login.jpeg)
+![PASWORD!](images/recuperarContrasena.jpeg)
+![MENU!](images/menu.jpeg)
+![REGISTRO!](images/actividad.jpeg)
+![INGRESAR!](images/ingresarStock.jpeg)
+![RETIRAR!](images/registrarProducto.jpeg)
+![REGISTRARPRODUCTO!](images/registrarProducto.jpeg)
+![USUARIOS!](images/usuarios.jpeg)
+![CREARusUSUARIOS](images/crearUsuario.jpeg)
 
 ## License
 
